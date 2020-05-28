@@ -8,12 +8,20 @@ import store from './store';
 
 import './App.css';
 
-import Navbar from './components/layout/Navbar';
+import Header from './components/layout/Header';
+
 import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import PrivateRoute from './components/private-route/PrivateRoute';
 import Dashboard from './components/dashboard/Dashboard';
+import Definitions from "./pages/Definitions";
+import Library from "./pages/Library";
+import WebSearch from "./pages/WebSearch";
+import VideoSearch from "./pages/VideoSearch";
+
+
+
 
 if(localStorage.jwtToken){
     const token = localStorage.jwtToken;
@@ -35,10 +43,16 @@ class App extends Component {
             <Provider store={store}>
                 <Router>
                     <div className="App">
-                        <Navbar />
+                        <Header />
                         <Route exact path="/" component={Landing} />
                         <Route exact path="/register" component={Register} />
                         <Route exact path="/login" component={Login} />
+                        <Route exact path="/definitions" component={Definitions} />
+                        <Route exact path="/library" component={Library} />
+                        <Route exact path="/WebSearch" component={WebSearch} />
+                        <Route exact path="/VideoSearch" component={VideoSearch} />
+
+
                         <Switch>
                             <PrivateRoute exact path="/dashboard" component={Dashboard} />
                         </Switch>
