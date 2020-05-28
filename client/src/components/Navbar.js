@@ -13,7 +13,7 @@ const Main = props => {
         <ul id="nav-mobile" class="left hide-on-med-and-down">
           <li><a href="/main">Home</a></li>
           <li><a href="/websearch">Search Web</a></li>
-          <li><a href="#">Search Tutorials</a></li>
+          <li><a href="/videosearch">Search Tutorials</a></li>
           <li><a href="/definitions">My Definitions</a></li>
           <li><a href="/library">My Library</a></li>
         </ul>
