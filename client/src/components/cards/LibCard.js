@@ -7,7 +7,14 @@ function LibCard() {
             <div class="col s12">
                 <div class="card blue-grey">
                     <div class="card-content white-text">
-                        <span class="card-title" id="lib-title">Title</span>
+
+                        <row class="card-title" id="lib-title">
+                            <i class="fa fa-book" aria-hidden="true"></i>
+                            <i class="fa fa-video-camera " aria-hidden="true"></i>
+                            Title
+ 
+                        </row>
+
                         <p id="lib-des">Description
                         </p>
                         <hr />
