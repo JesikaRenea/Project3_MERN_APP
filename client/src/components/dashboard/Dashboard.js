@@ -18,29 +18,26 @@ class Dashboard extends Component {
         return (
             <div >
                 <Navbar />
-                <br />
                 <Main />
-
-                    {/* Log Out Button */}
-                    <button className="btn btn-large waves-effect waves-light hoverable" style={{
-                        width: "150px",
-                        borderRadius: "3px",
-                        letterSpacing: "1.5px",
-                        marginTop: "1rem"
-                    }} onClick={this.onLogoutClick}>
-                        Logout
+                <button className="btn btn-large waves-effect waves-light hoverable" style={{
+                    width: "150px",
+                    borderRadius: "3px",
+                    letterSpacing: "1.5px",
+                    marginTop: "1rem"
+                }} onClick={this.onLogoutClick}>
+                    Logout
                         </button>
-                    </div>
+            </div>
 
         );
     }
 }
 
 Dashboard.propTypes = {
-                    logoutUser: PropTypes.func.isRequired,
+    logoutUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({ auth: state.auth });
 
-export default connect(mapStateToProps, { logoutUser})(Dashboard);
+export default connect(mapStateToProps, { logoutUser })(Dashboard);

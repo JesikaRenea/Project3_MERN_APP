@@ -1,4 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Definitions from "../pages/Definitions";
+
 
 const Main = props => {
   return (
@@ -11,10 +14,10 @@ const Main = props => {
         </a>
 
         <ul id="nav-mobile" class="left hide-on-med-and-down">
-          <li><a href="/main">Home</a></li>
+          <li><a href="/dashboard">Home</a></li>
           <li><a href="/websearch">Search Web</a></li>
           <li><a href="/videosearch">Search Tutorials</a></li>
-          <li><a href="/definitions">My Definitions</a></li>
+          <li><Link to="/definitions" component={Definitions}>My Definitions</Link></li>
           <li><a href="/library">My Library</a></li>
         </ul>
       </div>

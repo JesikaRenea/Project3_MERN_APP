@@ -1,12 +1,12 @@
 import React from 'react';
 
-const LibraryInput = props => {
+const SkillInput = props => {
     return (
 
         <div className="inputContainer">
 
             <div className="row">
-            <h5 className="col s4">Add to Library</h5>
+                <h5 className="col s4">Add a Skill</h5>
 
                 <div class="input-field col s6">
                     <select>
@@ -17,30 +17,29 @@ const LibraryInput = props => {
                     </select>
                     <label>Category Select</label>
                 </div>
+
                 <div className="col s2">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="material-icons right">send</i>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
                     </button>
                 </div>
             </div>
 
-
-
             <div class="row">
                 <form class="col s12">
                     <div class="input-field col s4">
-                        <input id="library-input" type="text" class="validate" />
-                        <label for="library-title">Title</label>
+                        <input id="skill-input" type="text" class="validate" />
+                        <label for="skill">Skill</label>
                     </div>
                     <div class="input-field col s8">
-                        <input id="library-link-input" type="text" class="validate" />
-                        <label for="library-link">Link</label>
+                        <input id="skill-description-input" type="text" class="validate" />
+                        <label for="description">Description</label>
                     </div>
                 </form>
             </div>
         </div>
 
-
     );
 };
 
-export default LibraryInput
+export default SkillInput
