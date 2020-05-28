@@ -1,0 +1,66 @@
+.header {
+    text-align: center;
+}
+
+/* .App {
+  text-align: center;
+} */
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+  }
+  
+  .App-header {
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+  }
+  
+  .App-intro {
+    font-size: large;
+  }
+  
+  @keyframes App-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  .jumbotron {
+    padding: 2px;
+    text-align: center;
+  }
+  
+  .appTitle {
+    padding: 20px;
+    margin-top: 10px;
+  }
+  
+  .logo-image {
+    height: 200px;}
+  
+  .nav {
+    padding: 10px;
+    margin: 15px;
+  }
+  
+  .mainRow1 {
+    margin-top: 15px;
+  }
+  
+  .inputContainer {
+    border: 1px solid gray;
+    border-radius: 5px;
+    float: left;
+    margin: 10px;
+    width: -webkit-fill-available;
+  }
+  
+  .col .row {
+    margin-left: 0px;
+  }
+  
+  .btn {
+    margin: 10px;
+  }
