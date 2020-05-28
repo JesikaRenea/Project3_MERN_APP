@@ -123,7 +123,7 @@ router.post('/login', (req, res) => {
         })
 
         // Delete A Category by name
-        router.delete('/delCatName', (req, res)=>{
+        router.delete('/delcatname', (req, res)=>{
             const catName = req.body.catName;
             Cat.deleteOne({catName}, (err, result) =>{
                 if(err) return res.send(err)
