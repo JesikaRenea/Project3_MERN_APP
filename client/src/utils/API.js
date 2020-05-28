@@ -94,7 +94,7 @@ export default {
         return axios.get("/alltextlib", data)
     },
 
-    dellLibById: function(data){
+    delLibById: function(data){
         return axios.delete("/lib", data)
         }
     }
