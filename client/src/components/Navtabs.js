@@ -1,7 +1,7 @@
 import React from 'react';
-import SkillInput from "./SkillInput";
-import DefinitionInput from "./DefinitionInput";
-import LibraryInput from "./LibraryInput";
+import SkillInput from "./InputComponents/SkillInput";
+import DefinitionInput from "./InputComponents/DefinitionInput";
+import LibraryInput from "./InputComponents/LibraryInput";
 
 const Main = props => {
     return (

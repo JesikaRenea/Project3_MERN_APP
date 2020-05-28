@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from "../components/Navbar";
-import SkillsTable from "../components/SkillsTable";
+import Navbar from "../components/layout/Navbar";
+import SkillsTable from "../components/layout/SkillsTable";
 
 
 

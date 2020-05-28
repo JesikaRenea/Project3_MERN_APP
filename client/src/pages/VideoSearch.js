@@ -1,8 +1,6 @@
 import React from 'react';
-import Header from "../components/Header";
-import Navbar from "../components/Navbar";
-import SkillsTable from "../components/SkillsTable";
-import Main from '../components/Navtabs';
+import Navbar from "../components/layout/Navbar";
+import SkillsTable from "../components/layout/SkillsTable";
 
 
 

@@ -1,21 +1,20 @@
 import React from 'react';
-import Header from "../components/Header";
-import Navbar from "../components/Navbar";
-import SkillsTable from "../components/SkillsTable";
-import Main from '../components/Navtabs';
-
+import Navbar from "../components/layout/Navbar";
+import SkillsTable from "../components/layout/SkillsTable";
+import LibCard from '../components/cards/LibCard'
 
 
 const Library = props => {
     return (
         <div>
-        <Navbar />
+            <Navbar />
             <div class="row mainRow1">
                 <div class="col s2">
                     <SkillsTable />
                 </div>
                 <div class="col s10">
-
+                    <h4 className="page-title">My Library</h4>
+                    <LibCard />
                 </div>
             </div>
         </div>

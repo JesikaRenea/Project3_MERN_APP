@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import Main from '../Main'
-import Navbar from '../Navbar'
+import Navbar from "../layout/Navbar";
 
 
 class Dashboard extends Component {

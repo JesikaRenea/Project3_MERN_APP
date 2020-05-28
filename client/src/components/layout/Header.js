@@ -1,5 +1,5 @@
 import React from 'react';
-import Learning from "../assets/images/learning.png"
+import Learning from "../../assets/images/learning.png"
 
 
 const Header = props => {

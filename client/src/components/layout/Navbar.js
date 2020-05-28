@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Definitions from "../pages/Definitions";
 
 
 const Main = props => {
@@ -17,7 +16,7 @@ const Main = props => {
           <li><a href="/dashboard">Home</a></li>
           <li><a href="/websearch">Search Web</a></li>
           <li><a href="/videosearch">Search Tutorials</a></li>
-          <li><Link to="/definitions" component={Definitions}>My Definitions</Link></li>
+          <li><a href="/definitions">My Definitions</a></li>
           <li><a href="/library">My Library</a></li>
         </ul>
       </div>

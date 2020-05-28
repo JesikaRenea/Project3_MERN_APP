@@ -1,8 +1,7 @@
 import React from 'react';
-import Header from "../components/Header";
-import Navbar from "../components/Navbar";
-import SkillsTable from "../components/SkillsTable";
-import Main from '../components/Navtabs';
+import Navbar from "../components/layout/Navbar";
+import SkillsTable from "../components/layout/SkillsTable";
+import DefCard from "../components/cards/DefCard";
 
 
 
@@ -15,6 +14,9 @@ const Definitions = props => {
                     <SkillsTable />
                 </div>
                 <div class="col s10">
+                    <h4 className="page-title">My Definitions</h4>
+                    <DefCard />
+
 
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Navtabs from "./Navtabs"
-import SkillsTable from "./SkillsTable";
+import SkillsTable from "./layout/SkillsTable";
 import UserInputs from "./UserInputs"
 
 
