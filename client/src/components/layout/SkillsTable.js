@@ -4,27 +4,27 @@ import API from "../../utils/API";
 
 const SkillsTable = props => {
 
-  const [skills, setSkills] = useState([])
+  // const [skills, setSkills] = useState([])
 
-  useEffect(() => {
-    {
-      API.getAllSkillsByUser()
-      .then(res => {
-        console.log(res.data);
-        setSkills(res.data.map(cat => ({
-          value: skills._id,
-          label: skills.skillsName
-        })
-        ))
-      }
-      )
-      .catch(
-        error => console.log(error.response.data)
-      )
-    }
-  },
-    []
-  );
+  // useEffect(() => {
+  //   {
+  //     API.getAllSkillsByUser()
+  //     .then(res => {
+  //       console.log(res.data);
+  //       setSkills(res.data.map(cat => ({
+  //         value: skills._id,
+  //         label: skills.skillsName
+  //       })
+  //       ))
+  //     }
+  //     )
+  //     .catch(
+  //       error => console.log(error.response.data)
+  //     )
+  //   }
+  // },
+  //   []
+  // );
 
 
   return (
@@ -36,10 +36,10 @@ const SkillsTable = props => {
       </thead>
 
       <tbody>
-        {skills.map(skills => (
+        {/* {skills.map(skills => ( */}
           <tr>
             <td>
-              {skills}
+              {/* {skills} */}
             </td>
           </tr>
         ))}
