@@ -11,7 +11,8 @@ const CategoryInput = (props) => {
         })
             .then(res => {
                 console.log("Category Saved");
-                setCategory("")
+                setCategory("");
+                props.getCats(true)
             }
             )
             .catch(
@@ -25,13 +26,21 @@ const CategoryInput = (props) => {
                 <h5 className="col s4">Add a Category</h5>
 
                 <div className="input-field col s6">
-                    <input value={category} onChange={(e) => setCategory(e.target.value)} id="category-input" type="text" className="validate" />
+                    <input
+                        value={category}
+                        onChange={(e) => setCategory(e.target.value)}
+                        id="category-input"
+                        type="text"
+                        className="validate" />
                     <label htmlFor="skill">Category Title</label>
                 </div>
 
                 <div className="col s2">
-                    <button onClick={handleSubmit}
-                        className="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <button
+                        onClick={handleSubmit}
+                        className="btn waves-effect waves-light"
+                        type="submit"
+                        name="action">Submit
     <i className="material-icons right">send</i>
                     </button>
                 </div>
