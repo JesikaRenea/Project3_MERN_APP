@@ -6,13 +6,13 @@ const Main = props => {
   return (
 
     <nav>
-      <div class="nav-wrapper">
+      <div className="nav-wrapper">
         
-        <a href="#" class="brand-logo right">
-          <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+        <a href="#" className="brand-logo right">
+          <i className="fa fa-lightbulb-o" aria-hidden="true"></i>
         </a>
 
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <ul id="nav-mobile" className="left hide-on-med-and-down">
           <li><a href="/dashboard">Home</a></li>
           <li><a href="/websearch">Search Web</a></li>
           <li><a href="/videosearch">Search Tutorials</a></li>

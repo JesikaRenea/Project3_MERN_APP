@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
     // Add Category Categories are unique
     addCat: function(data){
-        return axios.post("/cat", data);
+        return axios.post("/api/users/cat", data);
     },
 
     findAllCat: function(data){

@@ -1,27 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
+import API from "../../utils/API"
 
-const CategoryInput = props => {
+const CategoryInput = (props) => {
+    const [category, setCategory] = useState("")
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        API.addCat({
+            catName: category
+        })
+            .then(res => {
+                console.log("Category Saved");
+                setCategory("")
+            }
+            )
+            .catch(
+                error => console.log(error.response.data)
+            )
+    }
+
     return (
-
         <div className="inputContainer">
-
             <div className="row">
                 <h5 className="col s4">Add a Category</h5>
 
-                <div class="input-field col s6">
-                <input id="category-input" type="text" class="validate" />
-                        <label for="skill">Category Title</label>
-
+                <div className="input-field col s6">
+                    <input value={category} onChange={(e) => setCategory(e.target.value)} id="category-input" type="text" className="validate" />
+                    <label htmlFor="skill">Category Title</label>
                 </div>
 
                 <div className="col s2">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
+                    <button onClick={handleSubmit}
+                        className="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i className="material-icons right">send</i>
                     </button>
                 </div>
             </div>
         </div>
-
     );
 };
 
