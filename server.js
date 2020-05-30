@@ -5,6 +5,10 @@ const passport = require('passport');
 const path = require('path');
 
 const users = require('./routes/api/users');
+const cat = require('./routes/api/cat');
+const def = require('./routes/api/def');
+const lib = require('./routes/api/lib');
+const skill = require('./routes/api/skill');
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -20,6 +24,10 @@ app.use(passport.initialize());
 require('./config/passport')(passport);
 
 app.use('/api/users', users);
+app.use('/api/cat', cat);
+app.use('/api/def', def);
+app.use('/api/lib', lib);
+app.use('/api/skill', skill);
 
 // Heroku fix to serve the build react app
 if(process.env.NODE_ENV === 'production'){
