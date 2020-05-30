@@ -74,6 +74,7 @@ export default {
     updateLibUrl: function(data){
         return axios.put("/api/lib/liburl", data)
     },
+
     updateLibType: function(data){
         return axios.put("/api/lib/libtype", data)
     },

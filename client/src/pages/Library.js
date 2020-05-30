@@ -8,11 +8,11 @@ const Library = props => {
     return (
         <div>
             <Navbar />
-            <div class="row mainRow1">
-                <div class="col s2">
+            <div className="row mainRow1">
+                <div className="col s2">
                     <SkillsTable />
                 </div>
-                <div class="col s10">
+                <div className="col s10">
                     <h4 className="page-title">My Library</h4>
                     <LibCard />
                 </div>

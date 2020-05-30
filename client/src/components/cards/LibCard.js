@@ -3,14 +3,14 @@ import React from "react";
 function LibCard() {
     return (
 
-        <div class="row">
-            <div class="col s12">
-                <div class="card blue-grey">
-                    <div class="card-content white-text">
+        <div className="row">
+            <div className="col s12">
+                <div className="card blue-grey">
+                    <div className="card-content white-text">
 
-                        <row class="card-title" id="lib-title">
-                            <i class="fa fa-book" aria-hidden="true"></i>
-                            <i class="fa fa-video-camera " aria-hidden="true"></i>
+                        <row className="card-title" id="lib-title">
+                            <i className="fa fa-book" aria-hidden="true"></i>
+                            <i className="fa fa-video-camera " aria-hidden="true"></i>
                             Title
  
                         </row>
@@ -20,7 +20,7 @@ function LibCard() {
                         <hr />
                         <span id="category-id">Category</span>
                     </div>
-                    <div class="card-action">
+                    <div className="card-action">
                         <a href="#">Link</a>
                     </div>
                 </div>
