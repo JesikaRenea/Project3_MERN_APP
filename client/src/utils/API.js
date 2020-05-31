@@ -97,5 +97,13 @@ export default {
 
     delLibById: function(data){
         return axios.delete("/api/lib/lib", data)
-        }
+        },
+    
+    extWebSearch: function(data){
+        return axios.get("/api/ext/web", data)
+    },
+
+    extNewsSearch: function(data){
+        return axios.get("/api/ext/news", data)
     }
+}
