@@ -18,7 +18,9 @@ const DefinitionInput = (props) => {
         e.preventDefault();
         API.addDef({
             defName: defName,
-            defText: defText
+            defText: defText,
+            catId: selectedValue.value
+
         })
             .then(res => {
                 console.log("Definition Saved");

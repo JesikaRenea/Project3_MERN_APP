@@ -24,8 +24,8 @@ const UserInputs = props => {
             .catch(
                 error => console.log(error.response.data)
             )
+
         setGetCats(false)} 
-        
     },
         [getCats]
     );
