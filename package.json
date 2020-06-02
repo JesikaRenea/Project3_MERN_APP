@@ -28,6 +28,8 @@
     "passport-jwt": "^4.0.0",
     "path": "^0.12.7",
     "react-radio-toggle": "^1.1.1",
+    "react-select": "^3.1.0",
+    "react-toggle": "^4.1.1",
     "react-under-construction": "^0.3.0",
     "validator": "^11.1.0"
   },
