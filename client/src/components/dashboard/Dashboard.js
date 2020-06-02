@@ -4,9 +4,12 @@ import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import Main from '../Main'
 import Navbar from "../layout/Navbar";
+import UserInputs from "../UserInputs"
 
 
 class Dashboard extends Component {
+
+
     onLogoutClick = e => {
         e.preventDefault();
         this.props.logoutUser();
@@ -19,6 +22,7 @@ class Dashboard extends Component {
             <div >
                 <Navbar />
                 <Main />
+                {/* <UserInputs /> */}
                 <button className="btn btn-large waves-effect waves-light hoverable" style={{
                     width: "150px",
                     borderRadius: "3px",
