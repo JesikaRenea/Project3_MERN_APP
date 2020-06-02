@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import API from "../../utils/API";
 import Select from 'react-select';
 
@@ -21,6 +21,7 @@ const SkillInput = (props) => {
             .then(res => {
                 console.log("Skill Saved");
                 setSkill("")
+                props.getSkills(true)
             }
             )
             .catch(

@@ -3,8 +3,6 @@ import API from "../../utils/API";
 import Select from 'react-select';
 import Toggle from 'react-radio-toggle'
 
-
-
 const LibraryInput = (props) => {
     const [selectedValue, setSelectedValue] = useState("")
 

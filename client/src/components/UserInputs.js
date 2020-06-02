@@ -24,8 +24,8 @@ const UserInputs = props => {
             .catch(
                 error => console.log(error.response.data)
             )
+
         setGetCats(false)} 
-        
     },
         [getCats]
     );
@@ -33,7 +33,7 @@ const UserInputs = props => {
     return (
         <div>
             <CategoryInput getCats={setGetCats}/>
-            <SkillInput categories={categories}/>
+            <SkillInput categories={categories} getSkills={props.getSkills} />
             <DefinitionInput categories={categories}/>
             <LibraryInput categories={categories}/>
         </div>
