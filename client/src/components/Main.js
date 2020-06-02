@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navtabs from "./Navtabs"
 import SkillsTable from "./layout/SkillsTable";
 import UserInputs from "./UserInputs"
+import API from "../utils/API"
 
 
 const Main = props => {
