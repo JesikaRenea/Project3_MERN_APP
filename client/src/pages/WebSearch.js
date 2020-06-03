@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from "../components/layout/Navbar";
 import SkillsTable from "../components/layout/SkillsTable";
+import SearchContainer from "../components/searchComponents/SearchContainer"
 
 const WebSearch = props => {
     return (
@@ -8,10 +9,11 @@ const WebSearch = props => {
         <Navbar />
             <div className="row mainRow1">
                 <div className="col s2">
-                    <SkillsTable />
+                    {/* <SkillsTable /> */}
+                    Skills Table
                 </div>
                 <div className="col s10">
-
+<SearchContainer />
                 </div>
             </div>
         </div>
