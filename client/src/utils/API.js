@@ -64,7 +64,7 @@ export default {
     },
 
     getAllDefByUser: function(data){
-        return axios.get("/api/def/alldeff", data)
+        return axios.get("/api/def/alldef", data)
     },
 
     addLib: function(data){

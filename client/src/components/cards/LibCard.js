@@ -1,6 +1,6 @@
 import React from "react";
 
-function LibCard() {
+const LibCard = props => {
     return (
 
         <div className="row">
@@ -8,20 +8,21 @@ function LibCard() {
                 <div className="card blue-grey">
                     <div className="card-content white-text">
 
-                        <row className="card-title" id="lib-title">
-                            <i className="fa fa-book" aria-hidden="true"></i>
-                            <i className="fa fa-video-camera " aria-hidden="true"></i>
-                            Title
+                        <div className="card-title" id="lib-title">
+                            {/* <i className="fa fa-book" aria-hidden="true"></i>
+                            <i className="fa fa-video-camera " aria-hidden="true"></i> */}
+                            Title: {props.libName}
  
-                        </row>
+                        </div>
 
-                        <p id="lib-des">Description
+                        <p id="lib-des">Type: {props.libType}
                         </p>
                         <hr />
-                        <span id="category-id">Category</span>
+                        <span id="category-id">Category: {props.libCat} </span>
                     </div>
                     <div className="card-action">
-                        <a href="#">Link</a>
+                        <a href={props.libURL}
+                        target="_blank">{props.libURL}</a>
                     </div>
                 </div>
             </div>

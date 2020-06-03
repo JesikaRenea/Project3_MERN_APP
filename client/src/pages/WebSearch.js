@@ -2,8 +2,6 @@ import React from 'react';
 import Navbar from "../components/layout/Navbar";
 import SkillsTable from "../components/layout/SkillsTable";
 
-
-
 const WebSearch = props => {
     return (
         <div>
