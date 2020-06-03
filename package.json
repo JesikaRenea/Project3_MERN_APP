@@ -10,7 +10,7 @@
     "client": "npm start --prefix client",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
-  "author": "Richard G. Scates",
+  "author": "Richard G. Scates, Robert Moel, Jessica Hayes",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.19.2",
