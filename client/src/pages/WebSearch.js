@@ -8,7 +8,8 @@ const WebSearch = props => {
         <Navbar />
             <div className="row mainRow1">
                 <div className="col s2">
-                    <SkillsTable />
+                    {/* <SkillsTable /> */}
+                    Skills Table
                 </div>
                 <div className="col s10">
 
