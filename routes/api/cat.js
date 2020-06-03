@@ -34,6 +34,16 @@ const Cat = require('../../models/Cat');
             })
         })
 
+        //Find Category by ID (can get name from this)
+        router.get('/catbyid', (req, res)=>{
+            const _id = req.body.catId;
+            Cat.findById({_id}, (err, result)=>{
+                if(err) return res.send(err);
+                res.send(result)
+            })
+        })
+
+
         // Delete A Category by name
         router.delete('/delcatname', (req, res)=>{
             const catName = req.body.catName;

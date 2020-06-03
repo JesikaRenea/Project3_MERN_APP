@@ -14,6 +14,10 @@ export default {
         return axios.get("/api/cat/catbyname", data);
     },
 
+    findCatById: function(data){
+        return axios.get("/api/cat/catbyid", data);
+    },
+
     delCatByName: function(data){
         return axios.delete("/api/cat/delcatname", data);
     },
