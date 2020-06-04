@@ -104,10 +104,10 @@ export default {
         },
     
     extWebSearch: function(data){
-        return axios.get("/api/ext/web", data)
+        return axios.post("/api/ext/web", data)
     },
 
     extNewsSearch: function(data){
-        return axios.get("/api/ext/news", data)
+        return axios.post("/api/ext/news", data)
     }
 }
