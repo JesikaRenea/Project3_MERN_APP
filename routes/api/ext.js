@@ -5,7 +5,7 @@ const axios = require('axios');
 
 require('dotenv').config(); // external key info
 
-router.get("/web", (req, res)=>{
+router.post("/web", (req, res)=>{
     console.log("at external web route")
     let inText = req.body.query.trim()/*.replace(/\s/g, "+")*/;
     axios({
@@ -35,7 +35,7 @@ router.get("/web", (req, res)=>{
 
 });
 
-router.get("/news", (req, res)=>{
+router.post("/news", (req, res)=>{
     let inText = req.body.query.trim();
 
     axios({
