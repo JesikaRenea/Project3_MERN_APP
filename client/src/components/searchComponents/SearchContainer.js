@@ -10,15 +10,20 @@ class SearchContainer extends Component {
     results: []
   };
 
-  // When this component mounts, search the Giphy API for pictures of kittens
-  componentDidMount() {
-    this.searchWeb("web-dev");
-  }
+  // // When this component mounts, search the Giphy API for pictures of kittens
+  // componentDidMount() {
+  //   this.searchWeb({query: "web-dev"});
+  // }
 
   searchWeb = query => {
-    console.log({query});
-    API.extWebSearch({query})
-      .then(res => this.setState({ query: res.data.data }))
+    console.log({ query });
+    API.extWebSearch({ query })
+      .then(res => {
+        console.log(res)
+        this.setState({ results: res.data })
+      }
+      )
+
       .catch(err => console.log(err));
   };
 
