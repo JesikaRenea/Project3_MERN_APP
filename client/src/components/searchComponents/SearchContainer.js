@@ -16,8 +16,9 @@ class SearchContainer extends Component {
   }
 
   searchWeb = query => {
-    API.extWebSearch(query)
-      .then(res => this.setState({ results: res.data.data }))
+    console.log({query});
+    API.extWebSearch({query})
+      .then(res => this.setState({ query: res.data.data }))
       .catch(err => console.log(err));
   };
 
