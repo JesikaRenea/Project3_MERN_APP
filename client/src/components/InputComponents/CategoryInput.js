@@ -13,12 +13,18 @@ const CategoryInput = (props) => {
                 console.log("Category Saved");
                 setCategory("");
                 props.getCats(true)
+                window.location.reload(false);
+
             }
             )
             .catch(
                 error => console.log(error.response.data)
             )
     }
+
+    function refreshPage() {
+        window.location.reload(false);
+      }
 
     return (
         <div className="inputContainer">
