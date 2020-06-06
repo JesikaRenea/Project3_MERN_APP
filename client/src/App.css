@@ -27,6 +27,10 @@
     to { transform: rotate(360deg); }
   }
   
+  #phoneType {
+    color: black;
+  }
+  
   .jumbotron {
     padding: 2px;
     text-align: center;
