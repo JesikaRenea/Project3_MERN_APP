@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 import Main from '../Main'
 import Navbar from "../layout/Navbar";
-import UserInputs from "../UserInputs"
+// import UserInputs from "../UserInputs"
 
 
 class Dashboard extends Component {
@@ -16,7 +16,7 @@ class Dashboard extends Component {
     }
 
     render() {
-        const { user } = this.props.auth;
+        // const { user } = this.props.auth;
 
         return (
             <div >

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Navtabs from "./Navtabs"
 import SkillsTable from "./layout/SkillsTable";
 import CategoriesTable from "./layout/CategoriesTable";
 
@@ -15,7 +14,7 @@ const Main = props => {
   const [categories, setCategories] = useState([])
 
   useEffect(() => {
-    {
+    
       if (getCategories)
         API.findAllCat()
           .then(res => {
@@ -32,13 +31,13 @@ const Main = props => {
           )
 
       setGetCategories(false)
-    }
+    
   },
     [getCategories]
   );
 
   useEffect(() => {
-    {
+    
       if (getSkills)
         API.getAllSkillsByUser()
           .then(res => {
@@ -55,7 +54,7 @@ const Main = props => {
           )
 
       setGetSkills(false)
-    }
+    
   },
     [getSkills]
   );

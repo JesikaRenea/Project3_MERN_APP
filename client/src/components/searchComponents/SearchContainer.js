@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import SearchForm from "./SearchForm";
 import ResultsList from "./ResultsList"
 import API from "../../utils/API";
-// import Ext from "../../../../routes/api/ext"
 
 class SearchContainer extends Component {
   state = {
@@ -10,10 +9,6 @@ class SearchContainer extends Component {
     results: []
   };
 
-  // // When this component mounts, search the Giphy API for pictures of kittens
-  // componentDidMount() {
-  //   this.searchWeb({query: "web-dev"});
-  // }
 
   searchWeb = query => {
     console.log({ query });

@@ -4,7 +4,7 @@ import SkillsTable from "../components/layout/SkillsTable";
 import CategoriesTable from "../components/layout/CategoriesTable";
 
 import LibCard from '../components/cards/LibCard'
-import Main from "../components/Main";
+// import Main from "../components/Main";
 import API from "../utils/API"
 
 
@@ -20,74 +20,74 @@ const Library = props => {
     const [categories, setCategories] = useState([])
 
     useEffect(() => {
-        {
-            if (getCategories)
-                API.findAllCat()
-                    .then(res => {
-                        console.log(res.data);
-                        setCategories(res.data.map(category => ({
-                            id: category._id,
-                            catName: category.catName
-                        })
-                        ))
-                    }
-                    )
-                    .catch(
-                        error => console.log(error.response.data)
-                    )
 
-            setGetCategories(false)
-        }
+        if (getCategories)
+            API.findAllCat()
+                .then(res => {
+                    console.log(res.data);
+                    setCategories(res.data.map(category => ({
+                        id: category._id,
+                        catName: category.catName
+                    })
+                    ))
+                }
+                )
+                .catch(
+                    error => console.log(error.response.data)
+                )
+
+        setGetCategories(false)
+
     },
         [getCategories]
     );
 
     useEffect(() => {
-        {
-            if (getSkills)
-                API.getAllSkillsByUser()
-                    .then(res => {
-                        console.log(res.data);
-                        setSkills(res.data.map(skill => ({
-                            id: skill._id,
-                            name: skill.skillsName
-                        })
-                        ))
-                    }
-                    )
-                    .catch(
-                        error => console.log(error.response.data)
-                    )
 
-            setGetSkills(false)
-        }
+        if (getSkills)
+            API.getAllSkillsByUser()
+                .then(res => {
+                    console.log(res.data);
+                    setSkills(res.data.map(skill => ({
+                        id: skill._id,
+                        name: skill.skillsName
+                    })
+                    ))
+                }
+                )
+                .catch(
+                    error => console.log(error.response.data)
+                )
+
+        setGetSkills(false)
+
     },
         [getSkills]
     );
 
     useEffect(() => {
-        {
-            if (getLib)
-                API.getAllLibByUser()
-                    .then(res => {
-                        console.log(res.data);
-                        setLib(res.data.map(lib => ({
-                            id: lib._id,
-                            libName: lib.libName,
-                            libType: lib.libType,
-                            libURL: lib.libURL,
-                            cat: lib.Cat,
-                            user: lib.libUser
-                        })
-                        ))
-                    }
-                    )
-                    .catch(
-                        error => console.log(error.response.data)
-                    )
 
-            setGetLib(false)
-        }
+        if (getLib)
+            API.getAllLibByUser()
+                .then(res => {
+                    console.log(res.data);
+                    setLib(res.data.map(lib => ({
+                        id: lib._id,
+                        libName: lib.libName,
+                        libType: lib.libType,
+                        libURL: lib.libURL,
+                        cat: lib.Cat,
+                        user: lib.libUser
+                    })
+                    ))
+                }
+                )
+                .catch(
+                    error => console.log(error.response.data)
+                )
+
+        setGetLib(false)
+
     },
         [getLib]
     );

@@ -14,7 +14,7 @@ const DefCard = props => {
                         <span id="category-id">Category: {props.cat}</span>
                     </div>
                     <div className="card-action">
-                        <a href="#">Ref Links</a>
+                        {/* <a href="#">Ref Links</a> */}
                     </div>
                 </div>
             </div>

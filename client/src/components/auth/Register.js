@@ -13,8 +13,10 @@ const phnOpt =[
 const st = require('../../assets/States/st.js')
 
 class Register extends Component {
+    
     constructor() {
         super();
+
         this.state = {
             email: "",
             password: "",
@@ -32,14 +34,15 @@ class Register extends Component {
         };
     }
 
+
     componentDidMount() {
-        if(this.props.auth.isAuthenticated) this.props.history.push("/dashboard");
+        if (this.props.auth.isAuthenticated) this.props.history.push("/dashboard");
     }
 
     componentWillReceiveProps(nextProps) {
-        if(nextProps.auth.isAuthenticated) this.props.history.push("/dashboard");
-        
-        if(nextProps.errors){
+        if (nextProps.auth.isAuthenticated) this.props.history.push("/dashboard");
+
+        if (nextProps.errors) {
             this.setState({
                 errors: nextProps.errors
             });
@@ -80,6 +83,7 @@ class Register extends Component {
         // console.log(newUser);
         this.props.registerUser(newUser, this.props.history);
     }
+    
 
     render() {
         const { errors } = this.state;
@@ -149,9 +153,13 @@ class Register extends Component {
                                 <span className="red-text">{errors.city}</span>
                             </div>
 
+
                             <div className="input-field col s12">
                                 <Select value = {this.state.st.value} onChange =  {this.onStateDropDwn} options = {st.data}/>
                             </div>
+
+
+
 
                             <div className="input-field col s12">
                                 <input onChange={this.onChange} value={this.state.zip} error={errors.zip} name="zip" type="text" className={classnames("", { invalid: errors.zip })} />
@@ -160,7 +168,12 @@ class Register extends Component {
                             </div>
 
                             <div className="input-field col s12">
-                                <input onChange={this.onChange} value={this.state.phone} error={errors.phone} name="phone" type="text" className={classnames("", { invalid: errors.phone })} />
+                                <input onChange={this.onChange}
+                                    value={this.state.phone}
+                                    error={errors.phone}
+                                    name="phone"
+                                    type="text"
+                                    className={classnames("", { invalid: errors.phone })} />
                                 <label htmlFor="phone">Phone</label>
                                 <span className="red-text">{errors.phone}</span>
                             </div>

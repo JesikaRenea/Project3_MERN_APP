@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from "../components/layout/Navbar";
-import SkillsTable from "../components/layout/SkillsTable";
+// import SkillsTable from "../components/layout/SkillsTable";
 import SearchContainer from "../components/searchComponents/SearchContainer"
 
 const WebSearch = props => {
