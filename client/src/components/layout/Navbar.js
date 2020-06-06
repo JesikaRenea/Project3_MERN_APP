@@ -8,16 +8,16 @@ const Main = props => {
     <nav>
       <div className="nav-wrapper">
         
-        <a href="#" className="brand-logo right">
+        <Link to="/dashboard" className="brand-logo right">
           <i className="fa fa-lightbulb-o" aria-hidden="true"></i>
-        </a>
+        </Link>
 
         <ul id="nav-mobile" className="left hide-on-med-and-down">
-          <li><a href="/dashboard">Home</a></li>
-          <li><a href="/websearch">Search Web</a></li>
-          <li><a href="/videosearch">Search Tutorials</a></li>
-          <li><a href="/definitions">My Definitions</a></li>
-          <li><a href="/library">My Library</a></li>
+          <li><Link to="/dashboard">Home</Link></li>
+          <li><Link to="/websearch">Search Web</Link></li>
+          <li><Link to="/videosearch">Search Tutorials</Link></li>
+          <li><Link to="/definitions">My Definitions</Link></li>
+          <li><Link to="/library">My Library</Link></li>
         </ul>
       </div>
     </nav>

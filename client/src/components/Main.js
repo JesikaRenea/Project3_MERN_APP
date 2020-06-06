@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Navtabs from "./Navtabs"
 import SkillsTable from "./layout/SkillsTable";
 import CategoriesTable from "./layout/CategoriesTable";
 

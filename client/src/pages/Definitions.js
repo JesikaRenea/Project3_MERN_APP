@@ -4,7 +4,7 @@ import SkillsTable from "../components/layout/SkillsTable";
 import CategoriesTable from "../components/layout/CategoriesTable";
 
 import DefCard from "../components/cards/DefCard";
-import Main from "../components/Main";
+// import Main from "../components/Main";
 import API from "../utils/API"
 
 

@@ -4,7 +4,7 @@ import SkillsTable from "../components/layout/SkillsTable";
 import CategoriesTable from "../components/layout/CategoriesTable";
 
 import LibCard from '../components/cards/LibCard'
-import Main from "../components/Main";
+// import Main from "../components/Main";
 import API from "../utils/API"
 
 

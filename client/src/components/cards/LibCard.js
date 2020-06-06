@@ -22,7 +22,8 @@ const LibCard = props => {
                     </div>
                     <div className="card-action">
                         <a href={props.libURL}
-                        target="_blank">{props.libURL}</a>
+                        target="_blank"
+                        rel="noopener noreferrer">{props.libURL}</a>
                     </div>
                 </div>
             </div>
