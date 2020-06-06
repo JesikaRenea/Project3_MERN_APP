@@ -153,10 +153,12 @@ class Register extends Component {
                                 <span className="red-text">{errors.city}</span>
                             </div>
 
-
-                            <div className="input-field col s12">
-                                <Select value = {this.state.st.value} onChange =  {this.onStateDropDwn} options = {st.data}/>
-                            </div>
+                            <label style = {{"fontSize":"inherit", "margin":"11px"}} htmlFor="state">
+                                <div className="input-field col s12">
+                                    State
+                                    <Select name="state" value = {this.state.st.value} onChange =  {this.onStateDropDwn} options = {st.data}/>
+                                </div>
+                            </label>
 
 
 
@@ -178,11 +180,13 @@ class Register extends Component {
                                 <span className="red-text">{errors.phone}</span>
                             </div>
 
-                            <div className="input-field col s12">
-
-                                <Select value = {this.state.phoneType.value} onChange =  {this.onPhoneDropDwn} options = {phnOpt}/>
-
-                            </div>
+                                <label style = {{"fontSize":"inherit", "margin":"11px"}} htmlFor="phoneType">
+                                    
+                                    <div className="input-field col s12">
+                                        Phone Type
+                                        <Select name = "phoneType"  value = {this.state.phoneType.value} onChange =  {this.onPhoneDropDwn} options = {phnOpt}/>
+                                    </div>
+                                </label>
                             <br/>
 
                             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
