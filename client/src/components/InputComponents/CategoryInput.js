@@ -13,6 +13,8 @@ const CategoryInput = (props) => {
                 console.log("Category Saved");
                 setCategory("");
                 props.getCats(true)
+                window.location.reload(false);
+
             }
             )
             .catch(
