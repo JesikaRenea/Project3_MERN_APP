@@ -22,10 +22,6 @@ const CategoryInput = (props) => {
             )
     }
 
-    function refreshPage() {
-        window.location.reload(false);
-      }
-
     return (
         <div className="inputContainer">
             <div className="row">
