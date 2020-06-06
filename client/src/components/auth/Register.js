@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
+import Select from 'react-select';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { registerUser } from '../../actions/authActions';
 import classnames from 'classnames';
+const phnOpt =[
+    {value:"Landline", label:"Landline"}, 
+    {value:"Mobile", label:"Mobile"}, 
+    {value:"None", label:"None"}
+];
+const st = require('../../assets/States/st.js')
 
 class Register extends Component {
     constructor() {
@@ -37,6 +44,15 @@ class Register extends Component {
                 errors: nextProps.errors
             });
         }
+    }
+
+    onPhoneDropDwn = e => {
+        console.log(e);
+        this.setState({phoneType: e.value});
+    }
+
+    onStateDropDwn = e => {
+        this.setState({st: e.value})
     }
 
     onChange = e => {
@@ -134,9 +150,7 @@ class Register extends Component {
                             </div>
 
                             <div className="input-field col s12">
-                                <input onChange={this.onChange} value={this.state.st} error={errors.st} name="st" type="text" className={classnames("", { invalid: errors.st })} />
-                                <label htmlFor="st">State</label>
-                                <span className="red-text">{errors.st}</span>
+                                <Select value = {this.state.st.value} onChange =  {this.onStateDropDwn} options = {st.data}/>
                             </div>
 
                             <div className="input-field col s12">
@@ -152,13 +166,15 @@ class Register extends Component {
                             </div>
 
                             <div className="input-field col s12">
-                                <input onChange={this.onChange} value={this.state.phoneType} error={errors.phoneType} name="phoneType" type="text" className={classnames("", { invalid: errors.phoneType })} />
-                                <label htmlFor="phoneType">Phone Type</label>
-                                <span className="red-text">{errors.phoneType}</span>
+
+                                <Select value = {this.state.phoneType.value} onChange =  {this.onPhoneDropDwn} options = {phnOpt}/>
+
                             </div>
+                            <br/>
 
                             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                                 <button className="btn btn-large waves-effect waves-light hoverable" style={{
+                                    float: "right", 
                                     width: "150px",
                                     borderRadius: "3px",
                                     letterSpacing: "1.5px",
@@ -167,6 +183,7 @@ class Register extends Component {
                                     Sign Up
                                 </button>
                             </div>
+
                         </form>
                     </div>
                 </div>
