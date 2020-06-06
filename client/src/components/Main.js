@@ -14,7 +14,7 @@ const Main = props => {
   const [categories, setCategories] = useState([])
 
   useEffect(() => {
-    {
+    
       if (getCategories)
         API.findAllCat()
           .then(res => {
@@ -31,13 +31,13 @@ const Main = props => {
           )
 
       setGetCategories(false)
-    }
+    
   },
     [getCategories]
   );
 
   useEffect(() => {
-    {
+    
       if (getSkills)
         API.getAllSkillsByUser()
           .then(res => {
@@ -54,7 +54,7 @@ const Main = props => {
           )
 
       setGetSkills(false)
-    }
+    
   },
     [getSkills]
   );

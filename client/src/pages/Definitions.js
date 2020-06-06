@@ -19,7 +19,7 @@ const Definitions = props => {
   const [categories, setCategories] = useState([])
 
   useEffect(() => {
-    {
+    
       if (getCategories)
         API.findAllCat()
           .then(res => {
@@ -36,13 +36,13 @@ const Definitions = props => {
           )
 
       setGetCategories(false)
-    }
+    
   },
     [getCategories]
   );
 
   useEffect(() => {
-    {
+    
       if (getSkills)
         API.getAllSkillsByUser()
           .then(res => {
@@ -59,13 +59,13 @@ const Definitions = props => {
           )
 
       setGetSkills(false)
-    }
+    
   },
     [getSkills]
   );
 
   useEffect(() => {
-    {
+    
       if (getDefs)
         API.getAllDefByUser()
           .then(res => {
@@ -84,7 +84,7 @@ const Definitions = props => {
           )
 
       setGetDefs(false)
-    }
+    
   },
     [getDefs]
   );
