@@ -7,61 +7,70 @@ require('dotenv').config(); // external key info
 
 router.post("/web", (req, res)=>{
     console.log("at external web route")
-    let inText = req.body.query.trim()/*.replace(/\s/g, "+")*/;
+    let inText = req.body.query.trim().replace(/\s/g, "+");
     axios({
         "method":"GET",
-        "url":"https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/WebSearchAPI",
+        "url":"https://google-search3.p.rapidapi.com/api/v1/search",
         "headers":{
         "content-type":"application/octet-stream",
-        "x-rapidapi-host":"contextualwebsearch-websearch-v1.p.rapidapi.com",
-        "x-rapidapi-key":process.env.CONTXT_WEB_KEY,
+        "x-rapidapi-host":"google-search3.p.rapidapi.com",
+        "x-rapidapi-key": process.env.CONTXT_WEB_KEY, 
         "useQueryString":true
-        },"params":{
-        "autoCorrect":"true",
-        "pageNumber":"1",
-        "pageSize":"10",
-        "q":inText,
-        "safeSearch":"false"
+        },
+        "params":
+        {
+        "get_total":"false",
+        "country":"US",
+        "language":"lang_en",
+        "max_results":"10",
+        "uule":"",
+        "hl":"us",
+        "q":"site: rapidapi.com "+ inText
         }
         })
         .then(result =>{
             console.log("Success");
-            res.send(result.data.value);
+            console.log(result.data.results);
+            res.send(result.data.results);
         })
         .catch(err=>{
             console.log(err);
             res.send(err);
-        })
-
+        });
 });
 
 router.post("/news", (req, res)=>{
-    let inText = req.body.query.trim();
+    let inText = req.body.query.trim().replace(/\s/g, "+");
 
     axios({
         "method":"GET",
-        "url":"https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/NewsSearchAPI",
+        "url":"https://google-search3.p.rapidapi.com/api/v1/search",
         "headers":{
         "content-type":"application/octet-stream",
-        "x-rapidapi-host":"contextualwebsearch-websearch-v1.p.rapidapi.com",
-        "x-rapidapi-key":process.env.CONTXT_WEB_KEY,
+        "x-rapidapi-host":"google-search3.p.rapidapi.com",
+        "x-rapidapi-key": process.env.CONTXT_WEB_KEY, 
         "useQueryString":true
-        },"params":{
-        "autoCorrect":"false",
-        "pageNumber":"1",
-        "pageSize":"10",
-        "q": inText,
-        "safeSearch":"false"
+        },
+        "params":
+        {
+        "get_total":"false",
+        "country":"US",
+        "language":"lang_en",
+        "max_results":"10",
+        "uule":"",
+        "hl":"us",
+        "q":"site: rapidapi.com "+ inText
         }
         })
         .then(result =>{
             console.log("Success");
-            res.send(result.data.value);
+            console.log(result.data.results);
+            res.send(result.data.results);
         })
         .catch(err=>{
             console.log(err);
             res.send(err);
-        })
-})
+        });
+});
 
 module.exports = router;
