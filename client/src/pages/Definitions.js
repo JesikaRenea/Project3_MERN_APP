@@ -74,7 +74,7 @@ const Definitions = props => {
               id: def._id,
               defName: def.defName,
               defText: def.defText,
-              cat: def.Cat,
+              cat: def.catName,
             })
             ))
           }
@@ -107,7 +107,7 @@ const Definitions = props => {
               id={def.id}
               defName={def.defName}
               defText={def.defText}
-              cat={def.Cat}
+              cat={def.catName}
             />
           )
           )

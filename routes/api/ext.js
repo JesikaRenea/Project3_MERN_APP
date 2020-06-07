@@ -25,7 +25,7 @@ router.post("/web", (req, res)=>{
         "max_results":"10",
         "uule":"",
         "hl":"us",
-        "q":"site: rapidapi.com "+ inText
+        "q": inText
         }
         })
         .then(result =>{
