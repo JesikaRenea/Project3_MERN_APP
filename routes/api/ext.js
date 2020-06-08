@@ -83,7 +83,7 @@ router.post("/video", (req, res) => {
         "headers": {
             "content-type": "application/octet-stream",
             "x-rapidapi-host": "youtube-search1.p.rapidapi.com",
-            "x-rapidapi-key": "057908564dmshc9f6ff413944963p152ea7jsna1d826e1f021",
+            "x-rapidapi-key": process.env.CONTXT_WEB_KEY,
             "useQueryString": true
         }
     })
