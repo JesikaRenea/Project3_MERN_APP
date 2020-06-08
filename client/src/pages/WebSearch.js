@@ -6,14 +6,14 @@ import SearchContainer from "../components/searchComponents/SearchContainer"
 const WebSearch = props => {
     return (
         <div>
-        <Navbar />
+            <Navbar />
             <div className="row mainRow1">
                 <div className="col s2">
                     {/* <SkillsTable /> */}
                     Skills Table
                 </div>
                 <div className="col s10">
-<SearchContainer />
+                    <SearchContainer />
                 </div>
             </div>
         </div>

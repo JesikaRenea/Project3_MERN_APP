@@ -21,9 +21,9 @@ function ResultsList(props) {
                         </p>
                     </div>
                     <div className="card-action">
-                        <a href={result.url}
+                        <a href={result.link}
                         target="_blank"
-                        rel="noopener noreferrer">{result.url}</a>
+                        rel="noopener noreferrer">{result.link}</a>
                     </div>
                 </div>
             </div>

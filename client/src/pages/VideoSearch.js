@@ -1,8 +1,7 @@
 import React from 'react';
 import Navbar from "../components/layout/Navbar";
 // import SkillsTable from "../components/layout/SkillsTable";
-
-
+import VideoSearchContainer from "../components/searchComponents/VideoSearchContainer"
 
 const VideoSearch = props => {
     return (
@@ -14,7 +13,7 @@ const VideoSearch = props => {
                     Skills Table
                 </div>
                 <div className="col s10">
-
+                <VideoSearchContainer />
                 </div>
             </div>
         </div>
