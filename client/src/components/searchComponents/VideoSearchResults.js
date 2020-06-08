@@ -5,19 +5,19 @@ function VideoSearchResults(props) {
         <ul className="list-group">
             {props.results.map((result, i) => (
 
-                <div className="row">
+                <div className="row" key={result.id.videoId}>
                     <div className="col s12">
                         <div className="card blue-grey">
                             <div className="card-content white-text">
 
                                 <div className="card-title"
-                                    id="video-title" key={i}>
+                                    id={"video-title"+i} >
 
                                     Title: {result.title}
 
                                 </div>
 
-                                <p id="lib-des">
+                                <p id={"lib-des" + i}>
                                     Channel: {result.channelTitle}
                                     <br />
                                     Duration: {result.duration}

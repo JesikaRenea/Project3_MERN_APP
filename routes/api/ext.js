@@ -87,8 +87,8 @@ router.post("/video", (req, res) => {
             "useQueryString": true
         }
     })
-        .then((response) => {
-            console.log(response)
+        .then((result) => {
+            console.log(result)
             res.send(result.data.items)
         })
         .catch((error) => {
