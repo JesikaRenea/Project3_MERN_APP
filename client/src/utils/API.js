@@ -109,5 +109,9 @@ export default {
 
     extNewsSearch: function(data){
         return axios.post("/api/ext/news", data)
+    },
+
+    extVideoSearch: function(data){
+        return axios.post("/api/ext/video", data)
     }
 }
