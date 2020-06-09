@@ -1,12 +1,27 @@
 import React, {useState, useEffect} from "react";
 import API from "../../utils/API";
 import Select from 'react-select';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function VideoSearchResults(props) {
     const [getCategories, setGetCategories] = useState(true)
     const [categories, setCategories] = useState([])
     const [selectedValue, setSelectedValue] = useState("")
-
+    
+    const addVideoSuccess () =>{
+        toast('Video Added!', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+    }
+    
+    
     useEffect(() => {
         if (getCategories)
 
@@ -47,7 +62,7 @@ function VideoSearchResults(props) {
             })
             .then(res =>{
                 console.log(res);
-                /*Need a user confirmation message*/
+                addVideoSuccess();
             })
             .catch(err =>{
                 console.log(err);
@@ -102,8 +117,19 @@ function VideoSearchResults(props) {
                                     id="card-btn"
                                     type="submit" name="action">
                                     Add To Library
-                        <i className="material-icons right">send</i>
+                                    <i className="material-icons right">send</i>
                                 </button>
+                                <ToastContainer
+                                    position="top-right"
+                                    autoClose={2000}
+                                    hideProgressBar={true}
+                                    newestOnTop={false}
+                                    closeOnClick
+                                    rtl={false}
+                                    pauseOnFocusLoss
+                                    draggable
+                                    pauseOnHover
+                                    />
                                 </div>
                             </div>
                         </div>
