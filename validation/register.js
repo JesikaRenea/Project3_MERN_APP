@@ -30,8 +30,32 @@ module.exports = function validateRegisterInput(data) {
         errors.password2 = "Passwords must match";
     }
 
+    if(Validator.isEmpty(data.address1)){
+        errors.address1 = "An address is required";
+    }
+
+    if(Validator.isEmpty(data.city)){
+        errors.city = "A city is required";
+    }
+
+    if(Validator.isEmpty(data.st)){
+        errors.st = "A state must be selected"
+    }
+
+    if(Validator.isEmpty(data.zip)){
+        errors.zip = "A 5-digit or 9-digit zip code must be provided"
+    } 
+
+    if(Validator.isEmpty(data.phone)){
+        errors.phone = "Please enter a valid 10-digit telephone or leave blank, you may use ( ) - or space"
+    }
+
+    if(Validator.isEmpty(data.phoneType)){
+        errors.phoneType = "Please make a selection"
+    }
+
     return {
         errors,
         isValid: isEmpty(errors)
     };
-};
+};// end of validator
