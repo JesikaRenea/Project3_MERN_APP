@@ -7,6 +7,8 @@ const DefCard = props => {
     const deleteDef = id => {
         API.delDefById(id)
           .then(res => console.log(res))
+          window.location.reload(false)
+
           .catch(err => console.log(err));
       }
 
@@ -21,31 +23,25 @@ const DefCard = props => {
                         </p>
                         <hr />
                         <span id="category-id">Category: {props.cat}</span>
-                    </div>
-
-                    <div className="card-action">
-                    <a href="#">Ref Links</a>
-
-                                <button
-                                    onClick={deleteDef}
-                                    className="btn waves-effect waves-light"
-                                    id="card-btn"
+                        <button
+                            onClick={() => deleteDef(props.id)}
+                            className="btn waves-effect waves-light"
+                                    id="lib-btn"
                                     type="delete" name="action">
                                     Delete
                         <i className="material-icons right">delete</i>
                                 </button>
 
                                 <button
-                                    // onClick={handleDelete}
+                                    // onClick={handleUpdate}
                                     className="btn waves-effect waves-light"
-                                    id="card-btn"
+                                    id="lib-btn"
                                     type="update" name="action">
                                     Update
                         <i className="material-icons right">edit</i>
                                 </button>
-
-
                     </div>
+
                 </div>
             </div>
         </div>

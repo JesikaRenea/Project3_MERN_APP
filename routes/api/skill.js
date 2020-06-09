@@ -31,8 +31,8 @@ const Skills = require('../../models/Skills');
         });
 
         //Delete a skill by id
-        router.delete('/skill', (req, res)=>{
-            const _id = req.body.skillId;
+        router.delete('/skill/:id', (req, res)=>{
+            const _id = req.params.id;
             Skills.deleteOne({_id}, (err, result) =>{
                 if(err) return res.send(err)
                 res.send(result)

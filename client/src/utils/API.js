@@ -22,8 +22,9 @@ export default {
         return axios.delete("/api/cat/delcatname", data);
     },
 
-    delCatByID: function(data){
-        return axios.delete("/api/cat/cat", data);
+    //Returning undefined
+    delCatByID: function(catId){
+        return axios.delete("/api/cat/cat/" + catId);
     },
 
     addSkill: function(data){
@@ -34,8 +35,9 @@ export default {
         return axios.get("/api/skill/skill", data)
     },
 
-    delSkillById: function(data){
-        return axios.delete("/api/skill/skill", data)
+    //Returning undefined
+    delSkillById: function(skillId){
+        return axios.delete("/api/skill/skill/" + skillId)
     },
     masterSkill: function(data){
         return axios.put("/api/skill/skill", data)
@@ -63,11 +65,11 @@ export default {
         return axios.get("/api/def/def", data)
     },
 
-    delDefById: function(data){
-        return axios.delete("/api/def/def", data)
+    delDefById: function(defId){
+        return axios.delete("/api/def/def/" + defId)
     },
 
-    getAllDefByUser: function(data){
+     getAllDefByUser: function(data){
         return axios.get("/api/def/alldef", data)
     },
 
