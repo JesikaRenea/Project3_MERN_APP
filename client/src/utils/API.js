@@ -99,8 +99,8 @@ export default {
         return axios.get("/api/lib/alltextlib", data)
     },
 
-    delLibById: function(data){
-        return axios.delete("/api/lib/lib", data)
+    delLibById: function(libId){
+        return axios.delete("/api/lib/lib/" + libId)
         },
     
     extWebSearch: function(data){
