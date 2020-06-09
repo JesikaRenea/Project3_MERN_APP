@@ -104,6 +104,7 @@ const Definitions = props => {
 
           {defs.map(def => (
             <DefCard
+              key={def.id}
               id={def.id}
               defName={def.defName}
               defText={def.defText}

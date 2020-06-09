@@ -81,3 +81,9 @@
     padding-bottom: 0px;
     padding-left: 0px;  
   }
+
+  #card-btn {
+margin: -7.5px;      
+float: right;
+margin-left: 20px
+  }

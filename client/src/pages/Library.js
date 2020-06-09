@@ -108,7 +108,7 @@ const Library = props => {
 
                     {lib.map(lib => (
                         <LibCard
-                            id={lib._id}
+                            id={lib.id}
                             libName={lib.libName}
                             libType={lib.libType}
                             libURL={lib.libURL}

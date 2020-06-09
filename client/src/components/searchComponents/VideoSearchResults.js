@@ -11,7 +11,7 @@ function VideoSearchResults(props) {
                             <div className="card-content white-text">
 
                                 <div className="card-title"
-                                    id={"video-title"+i} >
+                                    id={"video-title" + i} >
 
                                     Title: {result.title}
 
@@ -28,7 +28,18 @@ function VideoSearchResults(props) {
                                 <a href={result.url}
                                     target="_blank"
                                     rel="noopener noreferrer">{result.url}</a>
+
+                                <button
+                                    // onClick={handleAdd}
+                                    className="btn waves-effect waves-light"
+                                    id="card-btn"
+                                    type="submit" name="action">
+                                    Add To Library
+                        <i className="material-icons right">send</i>
+                                </button>
                             </div>
+
+
                         </div>
                     </div>
                 </div>

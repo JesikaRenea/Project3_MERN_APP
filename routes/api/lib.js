@@ -81,8 +81,9 @@ const Lib = require('../../models/Lib');
         });
 
         // Delete a library document
-        router.delete('/lib', (req, res)=>{
-            const _id = req.body.libId;
+        router.delete('/lib/:id', (req, res)=>{
+            const _id = req.params.id;
+            console.log(_id)
             Lib.deleteOne({_id}, (err,result)=>{
                 if(err) return res.send(err);
                 res.send(result);
