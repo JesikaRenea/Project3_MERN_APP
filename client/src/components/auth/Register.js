@@ -157,11 +157,9 @@ class Register extends Component {
                                 <div className="input-field col s12">
                                     State
                                     <Select name="state" value = {this.state.st.value} onChange =  {this.onStateDropDwn} options = {st.data}/>
+                                    <span className="red-text">{errors.st}</span>
                                 </div>
                             </label>
-
-
-
 
                             <div className="input-field col s12">
                                 <input onChange={this.onChange} value={this.state.zip} error={errors.zip} name="zip" type="text" className={classnames("", { invalid: errors.zip })} />
@@ -185,6 +183,7 @@ class Register extends Component {
                                     <div className="input-field col s12">
                                         Phone Type
                                         <Select name = "phoneType"  value = {this.state.phoneType.value} onChange =  {this.onPhoneDropDwn} options = {phnOpt}/>
+                                        <span className="red-text">{errors.phoneType}</span>
                                     </div>
                                 </label>
                             <br/>
