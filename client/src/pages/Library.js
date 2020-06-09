@@ -108,6 +108,8 @@ const Library = props => {
 
                     {lib.map(lib => (
                         <LibCard
+                            key={lib.id}
+
                             id={lib.id}
                             libName={lib.libName}
                             libType={lib.libType}

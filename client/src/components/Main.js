@@ -53,6 +53,8 @@ const Main = props => {
     [getSkills]
   );
 
+  
+
   return (
 
     <div className="row mainRow1">

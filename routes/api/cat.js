@@ -54,8 +54,8 @@ const Cat = require('../../models/Cat');
         });
 
         // Delete a Category by id
-        router.delete('/cat', (req, res)=>{
-            const _id = req.body._id;
+        router.delete('/cat/:id', (req, res)=>{
+            const _id = req.params.id;
             Cat.findByIdAndDelete({_id}, (err, result) =>{
                 if(err) return res.send(err)
                 res.send(result)

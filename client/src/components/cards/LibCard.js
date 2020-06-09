@@ -6,8 +6,10 @@ const LibCard = props => {
     const deleteLib = id => {
         // console.log(id)
         API.delLibById(id)
-          .then(res => alert("Item Deleted"))
-          .catch(err => console.log(err));
+        .then(res => console.log(res))
+        window.location.reload(false)
+
+        .catch(err => console.log(err));
       }
 
     return (
@@ -44,14 +46,14 @@ const LibCard = props => {
                         <i className="material-icons right">delete</i>
                         </button>
 
-                        <button
+                        {/* <button
                             // onClick={handleUpdate}
                             className="btn waves-effect waves-light"
                             id="card-btn"
                             type="update" name="action">
                             Update
                         <i className="material-icons right">edit</i>
-                        </button>
+                        </button> */}
 
                     </div>
                 </div>
