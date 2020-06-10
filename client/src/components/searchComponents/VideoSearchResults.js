@@ -9,7 +9,7 @@ function VideoSearchResults(props) {
     const [categories, setCategories] = useState([])
     const [selectedValue, setSelectedValue] = useState("")
     
-    const addVideoSuccess () =>{
+    const addVideoSuccess = () =>{
         toast('Video Added!', {
         position: "top-right",
         autoClose: 2000,
