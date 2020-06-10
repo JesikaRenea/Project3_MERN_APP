@@ -53,21 +53,24 @@ const Main = props => {
     [getSkills]
   );
 
-  
+
 
   return (
 
     <div className="row mainRow1">
       <div className="col s2">
-        <CategoriesTable categories={categories} />
+        <CategoriesTable categories={categories}
+          setGetCategories={setGetCategories} />
         <br />
-        <SkillsTable skills={skills} />
+        <SkillsTable skills={skills}
+          setGetSkills={setGetSkills} />
+
       </div>
       <div className="col s10">
         {/* <Navtabs /> */}
-        <UserInputs 
-        getCategories={setGetCategories}
-        getSkills={setGetSkills} />
+        <UserInputs
+          getCategories={setGetCategories}
+          setGetSkills={setGetSkills} />
       </div>
     </div>
 

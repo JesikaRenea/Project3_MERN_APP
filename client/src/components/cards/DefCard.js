@@ -6,9 +6,9 @@ const DefCard = props => {
 
     const deleteDef = id => {
         API.delDefById(id)
-          .then(res => console.log(res))
-          window.location.reload(false)
-
+          .then(res => {console.log(res)
+          props.setGetDefs(true)})
+        
           .catch(err => console.log(err));
       }
 
