@@ -23,8 +23,8 @@ export default {
     },
 
     //Returning undefined
-    delCatByID: function(catId){
-        return axios.delete("/api/cat/cat/" + catId);
+    delCatByID: function(id){
+        return axios.delete("/api/cat/cat/" + id);
     },
 
     addSkill: function(data){

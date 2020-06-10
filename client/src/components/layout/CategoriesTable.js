@@ -1,15 +1,17 @@
 import React from 'react';
-import API from "../../utils/API";
+// import API from "../../utils/API";
 
 const CategoriesTable = props => {
 
-  const deleteCat = id => {
-    API.delCatByID(id)
-      .then(res => console.log(res))
-    // window.location.reload(false)
-
-      .catch(err => console.log(err));
-  }
+  // const deleteCat = id => {
+  //   console.log(id)
+  //   API.delCatByID(id)
+  //     .then(res => {
+  //       console.log(res)
+  //       props.setGetCategories(true)
+  //     })
+  //     .catch(err => console.log(err));
+  // }
 
   return (
     <table>
@@ -24,11 +26,11 @@ const CategoriesTable = props => {
           <tr key={category.id}>
             <td>
               {category.catName}
-
-                <i
-                  onClick={() => deleteCat(props.id)}
-                  className="tiny material-icons right"
-                  id="lib-btn">X</i>
+{/* 
+              <i
+                onClick={() => deleteCat(category.id)}
+                className="tiny material-icons right"
+                id="lib-btn">X</i> */}
 
             </td>
           </tr>

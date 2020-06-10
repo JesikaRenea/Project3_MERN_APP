@@ -109,6 +109,7 @@ const Definitions = props => {
               defName={def.defName}
               defText={def.defText}
               cat={def.catName}
+              setGetDefs = {setGetDefs}
             />
           )
           )

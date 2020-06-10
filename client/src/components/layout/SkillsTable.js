@@ -7,9 +7,8 @@ const SkillsTable = props => {
   
   const deleteSkill = id => {
     API.delSkillById(id)
-      .then(res => console.log(res))
-    // window.location.reload(false)
-
+      .then(res => {console.log(res)
+      props.setGetSkills(true)})
       .catch(err => console.log(err));
   }
 
@@ -29,7 +28,7 @@ const SkillsTable = props => {
 
               
               <i
-                  onClick={() => deleteSkill(props.id)}
+                  onClick={() => deleteSkill(skill.id)}
                   className="tiny material-icons right"
                   id="lib-btn">X</i>
 
