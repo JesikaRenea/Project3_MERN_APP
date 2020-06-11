@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import API from "../../utils/API";
 
 
 const DefCard = props => {
+    const [defText, setDefText] = useState(props.defText);
 
     const deleteDef = id => {
         API.delDefById(id)
@@ -12,6 +13,22 @@ const DefCard = props => {
           .catch(err => console.log(err));
       }
 
+      const handleDefChange = e => {
+          console.log(e.target.value)
+          setDefText(e.target.value)
+      }
+
+      const handleUpdate = (id, defText) => {
+          console.log("In handle Update")
+          console.log(id, defText);
+          
+          API.updateDef({defId:id, defText:defText})
+          .then(res=> {
+              console.log(res);
+              props.setGetDefs(true);
+          })
+      }
+
     return (
 
         <div className="row" key={props.id}>
@@ -19,9 +36,10 @@ const DefCard = props => {
                 <div className="card blue-grey">
                     <div className="card-content white-text">
                         <span className="card-title" id="term-title"><strong>Term: {props.defName}</strong></span>
-                        <p id="term-def">Definition: {props.defText}
-                        </p>
-                        <hr />
+                        <form >
+                        Definition:
+                        <textarea id="term-def" value= { defText } onChange = {handleDefChange}/>
+                        </form>
                         <span id="category-id">Category: {props.defCat}</span>
                         <button
                             onClick={() => deleteDef(props.id)}
@@ -33,12 +51,12 @@ const DefCard = props => {
                                 </button>
 
                                 <button
-                                    // onClick={handleUpdate}
+                                    onClick = { ()=>handleUpdate(props.id, defText)}
                                     className="btn waves-effect waves-light"
                                     id="lib-btn"
                                     type="update" name="action">
                                     Update
-                        <i className="material-icons right">edit</i>
+                                    <i className="material-icons right">edit</i>
                                 </button>
                     </div>
 
