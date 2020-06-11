@@ -21,7 +21,6 @@ function VideoSearchResults(props) {
         });
     }
     
-    
     useEffect(() => {
         if (getCategories)
 
@@ -81,8 +80,7 @@ function VideoSearchResults(props) {
                         <div className="card blue-grey">
                             <div className="card-content white-text">
 
-                                <div className="card-title"
-                                    id={"video-title" + i} >
+                                <div className="card-title" id={"video-title" + i} >
 
                                     Title: {result.title}
 
@@ -92,7 +90,6 @@ function VideoSearchResults(props) {
                                     Channel: {result.channelTitle}
                                     <br />
                                     Duration: {result.duration}
-
                                 </p>
                             </div>
                             <div style = {{height:"100px"}} className="card-action">

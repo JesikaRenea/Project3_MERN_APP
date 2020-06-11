@@ -49,35 +49,36 @@ const Lib = require('../../models/Lib');
         // Get all library documents for a logged in user
         router.get('/alllib', passport.authenticate("jwt", {session:false}) , (req, res)=>{
             const User = req.user.id;
-            Lib.find({User}, (err, result)=>{
-                if(err) return res.send(err);
-                res.send(result);
-            });
+            Lib.find({User})
+                .populate("Cat")
+                .then(result=>res.send(result))
+                .catch(err => res.send(err))
+                
         });
 
         //Get one library document by id
         router.get('/lib', (req, res)=>{
             const _id = req.body.libId;
-            Lib.find({_id}, (err, data)=>{
-                if(err) return res.send(err);
-                res.send(data)
-            })
+            Lib.find({_id})
+                .populate("Cat")
+                .then(result => res.send(result))
+                .catch(err => res.send(err))
         });
 
         //Get all video library documents
         router.get('/allvidlib', passport.authenticate("jwt", {session:false}), (req, res)=>{
-            Lib.find({$and:[{User:req.user.id}, {libType:'VIDEO'}]}, (err, data)=>{
-                if(err) return res.send(err);
-                res.send(data)
-            })
+            Lib.find({$and:[{User:req.user.id}, {libType:'VIDEO'}]})
+            .populate("Cat")
+            .then(result =>res.send(result))
+            .catch(err => res.send(err))
         });
 
         // get all text library documents
         router.get('/alltextlib', passport.authenticate("jwt", {session:false}), (req, res)=>{
-            Lib.find({$and:[{User:req.user.id}, {libType:'TEXT'}]}, (err, data)=>{
-                if(err) return res.send(err);
-                res.send(data)
-            })
+            Lib.find({$and:[{User:req.user.id}, {libType:'TEXT'}]})
+                .populate("Cat")
+                .then(result => res.send(result))
+                .catch(err => res.send(err))
         });
 
         // Delete a library document

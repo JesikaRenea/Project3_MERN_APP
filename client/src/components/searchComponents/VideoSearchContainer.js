@@ -14,8 +14,7 @@ class VideoSearchContainer extends Component {
     console.log({ query });
     API.extVideoSearch({ query })
       .then(res => {
-        console.log("Output from Video Search")
-        console.log(res.data)
+
         this.setState({ results: res.data })
       }
       )
