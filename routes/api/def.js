@@ -36,10 +36,10 @@ const Def = require('../../models/Def');
         // Get one definition
         router.get('/def', (req, res)=>{
             const _id = req.body.defId;
-            Def.find({_id}, (err, result)=>{
-                if(err) return res.send(err);
-                res.send(result); 
-            });
+            Def.find({_id})
+            .populate("Cat")
+            .then(result=>res.send(result))
+            .catch(err => res.send(err))
         });
 
         // Delete one definition
@@ -55,10 +55,10 @@ const Def = require('../../models/Def');
         //Get all user's definitions
         router.get('/alldef', passport.authenticate("jwt", {session:false}), (req, res)=>{
             const User = req.user.id;
-            Def.find({User}, (err, result)=>{
-                if(err) return res.send(err);
-                res.send(result);
-            });
+            Def.find({User})
+                .populate("Cat")
+                .then(result=>res.send(result))
+                .catch(err => res.send(err))
         });
 
 module.exports = router;
