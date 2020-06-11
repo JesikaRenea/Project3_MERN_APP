@@ -25,9 +25,10 @@ const SkillsTable = props => {
               {skill.name}
               
               <i
+              style={{color: "gray"}}
                   onClick={() => deleteSkill(skill.id)}
-                  className="tiny material-icons right"
-                  id="lib-btn">X</i>
+                  className="material-icons right"
+                  id="lib-btn">delete</i>
 
             </td>
           </tr>
