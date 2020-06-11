@@ -69,12 +69,11 @@ const Definitions = props => {
       if (getDefs)
         API.getAllDefByUser()
           .then(res => {
-            console.log(res.data);
             setDefs(res.data.map(def => ({
               id: def._id,
               defName: def.defName,
               defText: def.defText,
-              cat: def.catName,
+              defCat: def.Cat[0].catName,
             })
             ))
           }
@@ -108,7 +107,7 @@ const Definitions = props => {
               id={def.id}
               defName={def.defName}
               defText={def.defText}
-              cat={def.catName}
+              defCat={def.defCat}
               setGetDefs = {setGetDefs}
             />
           )

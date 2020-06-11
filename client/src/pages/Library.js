@@ -4,7 +4,6 @@ import SkillsTable from "../components/layout/SkillsTable";
 import CategoriesTable from "../components/layout/CategoriesTable";
 
 import LibCard from '../components/cards/LibCard'
-// import Main from "../components/Main";
 import API from "../utils/API"
 
 
@@ -70,13 +69,12 @@ const Library = props => {
         if (getLib)
             API.getAllLibByUser()
                 .then(res => {
-                    console.log(res.data);
                     setLib(res.data.map(lib => ({
                         id: lib._id,
                         libName: lib.libName,
                         libType: lib.libType,
                         libURL: lib.libURL,
-                        cat: lib.Cat,
+                        libCat: lib.Cat[0].catName,
                         user: lib.libUser
                     })
                     ))
@@ -109,13 +107,13 @@ const Library = props => {
                     {lib.map(lib => (
                         <LibCard
                             key={lib.id}
-
                             id={lib.id}
                             libName={lib.libName}
                             libType={lib.libType}
                             libURL={lib.libURL}
-                            libCat={lib.Cat}
+                            libCat={lib.libCat}
                             libUser={lib.libUser}
+                            setGetLib={setGetLib}
                         />
                     ))}
                 </div>

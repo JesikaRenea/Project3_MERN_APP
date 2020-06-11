@@ -22,7 +22,7 @@ const DefCard = props => {
                         <p id="term-def">Definition: {props.defText}
                         </p>
                         <hr />
-                        <span id="category-id">Category: {props.cat}</span>
+                        <span id="category-id">Category: {props.defCat}</span>
                         <button
                             onClick={() => deleteDef(props.id)}
                             className="btn waves-effect waves-light"

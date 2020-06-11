@@ -32,8 +32,8 @@ const UserInputs = props => {
 
     return (
         <div>
-            <CategoryInput getCats={setGetCats}/>
-            <SkillInput categories={categories} getSkills={props.getSkills} />
+            <CategoryInput getCats={props.setGetCategories}/>
+            <SkillInput categories={categories} getSkills={props.setGetSkills} />
             <DefinitionInput categories={categories}/>
             <LibraryInput categories={categories}/>
         </div>

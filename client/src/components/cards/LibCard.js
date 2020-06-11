@@ -6,8 +6,9 @@ const LibCard = props => {
     const deleteLib = id => {
         // console.log(id)
         API.delLibById(id)
-        .then(res => console.log(res))
-        window.location.reload(false)
+        .then(res => {console.log(res)
+            props.setGetLib(true)
+        })
 
         .catch(err => console.log(err));
       }

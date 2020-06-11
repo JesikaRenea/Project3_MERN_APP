@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import API from "../../utils/API"
+import API from "../../utils/API";
 
 const CategoryInput = (props) => {
     const [category, setCategory] = useState("")
@@ -13,12 +13,10 @@ const CategoryInput = (props) => {
                 console.log("Category Saved");
                 setCategory("");
                 props.getCats(true)
-                window.location.reload(false);
-
             }
             )
             .catch(
-                error => console.log(error.response.data)
+                error => console.log(error)
             )
     }
 
