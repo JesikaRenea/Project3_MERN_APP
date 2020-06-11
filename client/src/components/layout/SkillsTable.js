@@ -1,9 +1,7 @@
 import React from 'react';
 import API from "../../utils/API";
 
-
 const SkillsTable = props => {
-
   
   const deleteSkill = id => {
     API.delSkillById(id)
@@ -25,7 +23,6 @@ const SkillsTable = props => {
           <tr key={skill.id}>
             <td>
               {skill.name}
-
               
               <i
                   onClick={() => deleteSkill(skill.id)}

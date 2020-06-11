@@ -76,7 +76,7 @@ const Library = props => {
                         libName: lib.libName,
                         libType: lib.libType,
                         libURL: lib.libURL,
-                        cat: lib.Cat,
+                        libCat: lib.Cat.catName,
                         user: lib.libUser
                     })
                     ))
@@ -109,12 +109,11 @@ const Library = props => {
                     {lib.map(lib => (
                         <LibCard
                             key={lib.id}
-
                             id={lib.id}
                             libName={lib.libName}
                             libType={lib.libType}
                             libURL={lib.libURL}
-                            libCat={lib.Cat}
+                            libCat={lib.libCat}
                             libUser={lib.libUser}
                         />
                     ))}
