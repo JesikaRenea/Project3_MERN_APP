@@ -8,8 +8,6 @@ import Navbar from "../layout/Navbar";
 
 
 class Dashboard extends Component {
-
-
     onLogoutClick = e => {
         e.preventDefault();
         this.props.logoutUser();
@@ -17,7 +15,6 @@ class Dashboard extends Component {
 
     render() {
         // const { user } = this.props.auth;
-
         return (
             <div >
                 <Navbar />
@@ -30,7 +27,7 @@ class Dashboard extends Component {
                     marginTop: "1rem"
                 }} onClick={this.onLogoutClick}>
                     Logout
-                        </button>
+                </button>
             </div>
 
         );

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import API from "../../utils/API";
 import Select from 'react-select';
 import Toggle from 'react-radio-toggle'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const LibraryInput = (props) => {
     const [selectedValue, setSelectedValue] = useState("")
@@ -10,6 +12,18 @@ const LibraryInput = (props) => {
     const [libName, setLibName] = useState("");
     const [libURL, setLibURL] = useState("");
     const [libType, setLibType] = useState("TEXT")
+
+    const addLibSuccess = () =>{
+        toast('Library Item Added Successfully', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+    }
 
     const handleCatChange = selectedValue => {
         setSelectedValue(selectedValue)
@@ -28,6 +42,7 @@ const LibraryInput = (props) => {
         })
             .then(res => {
                 console.log("Library Item Saved");
+                addLibSuccess();
                 setLibName("");
                 setLibURL("");
                 setLibType("")
@@ -62,6 +77,18 @@ const LibraryInput = (props) => {
                         type="submit" name="action">Submit
                     <i className="material-icons right">send</i>
                     </button>
+                    <ToastContainer
+                        position="top-right"
+                        autoClose={2000}
+                        hideProgressBar={true}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                    />
+
                 </div>
             </div>
 

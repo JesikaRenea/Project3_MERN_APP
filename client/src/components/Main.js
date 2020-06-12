@@ -23,8 +23,7 @@ const Main = props => {
             catName: category.catName
           })
           ))
-        }
-        )
+        })
         .catch(
           error => console.log(error.response.data)
         )
@@ -43,8 +42,7 @@ const Main = props => {
             name: skill.skillsName
           })
           ))
-        }
-        )
+        })
         .catch(
           error => console.log(error.response.data)
         )

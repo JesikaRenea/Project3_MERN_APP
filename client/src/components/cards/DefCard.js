@@ -1,17 +1,44 @@
 import React, {useState} from "react";
 import API from "../../utils/API";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const DefCard = props => {
     const [defText, setDefText] = useState(props.defText);
 
+    const updateDefSuccess = () =>{
+        toast('Definition Updated Successfully', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+    }
+
+    const deleteDefSuccess = () =>{
+        toast('Definition Deleted Successfully', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+    }
+
     const deleteDef = id => {
         API.delDefById(id)
-          .then(res => {console.log(res)
-          props.setGetDefs(true)})
-        
-          .catch(err => console.log(err));
-      }
+            .then(res => {
+                console.log(res)
+                deleteDefSuccess();
+                props.setGetDefs(true)
+            })
+            .catch(err => console.log(err));
+    };
 
       const handleDefChange = e => {
           console.log(e.target.value)
@@ -19,13 +46,10 @@ const DefCard = props => {
       }
 
       const handleUpdate = (id, defText) => {
-          console.log("In handle Update")
-          console.log(id, defText);
-          
           API.updateDef({defId:id, defText:defText})
           .then(res=> {
-              console.log(res);
-              props.setGetDefs(true);
+            updateDefSuccess()
+            props.setGetDefs(true);
           })
       }
 
@@ -44,22 +68,32 @@ const DefCard = props => {
                         <button
                             onClick={() => deleteDef(props.id)}
                             className="btn waves-effect waves-light"
-                                    id="lib-btn"
-                                    type="delete" name="action">
-                                    Delete
-                        <i className="material-icons right">delete</i>
-                                </button>
+                            id="lib-btn"
+                            type="delete" name="action">
+                                Delete
+                            <i className="material-icons right">delete</i>
+                        </button>
 
-                                <button
-                                    onClick = { ()=>handleUpdate(props.id, defText)}
-                                    className="btn waves-effect waves-light"
-                                    id="lib-btn"
-                                    type="update" name="action">
-                                    Update
-                                    <i className="material-icons right">edit</i>
-                                </button>
+                        <button
+                            onClick = { ()=>handleUpdate(props.id, defText)}
+                            className="btn waves-effect waves-light"
+                            id="lib-btn"
+                            type="update" name="action">
+                                Update
+                            <i className="material-icons right">edit</i>
+                        </button>
+                        <ToastContainer
+                            position="top-right"
+                            autoClose={2000}
+                            hideProgressBar={true}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                        />
                     </div>
-
                 </div>
             </div>
         </div>

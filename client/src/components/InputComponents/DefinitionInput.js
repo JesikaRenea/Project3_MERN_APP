@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import API from "../../utils/API"
 import Select from 'react-select';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const DefinitionInput = (props) => {
     const [selectedValue, setSelectedValue] = useState("")
@@ -8,6 +11,17 @@ const DefinitionInput = (props) => {
     const [defName, setDefName] = useState("");
     const [defText, setDefText] = useState("")
 
+    const addDefSuccess = () =>{
+        toast('Definition Added Successfully', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+    }
 
     const handleCatChange = selectedValue => {
         setSelectedValue(selectedValue)
@@ -23,15 +37,13 @@ const DefinitionInput = (props) => {
 
         })
             .then(res => {
-                console.log("Definition Saved");
+                addDefSuccess();
                 setDefName("");
                 setDefText("")
-            }
-            )
+            })
             .catch(
                 error => console.log(error.response.data)
-            )
-    }
+            )}
 
 return (
     <div className="inputContainer">
@@ -40,12 +52,12 @@ return (
             <h5 className="col s4">Add a Definition</h5>
 
             <div className="input-field col s6">
-            <Select
-                        value={selectedValue}
-                        onChange={handleCatChange}
-                        options={props.categories}
-                        placeholder="Category Select"
-                    />
+                <Select
+                    value={selectedValue}
+                    onChange={handleCatChange}
+                    options={props.categories}
+                    placeholder="Category Select"
+                />
             </div>
             <div className="col s2">
                 <button
@@ -53,8 +65,20 @@ return (
                     className="btn waves-effect waves-light"
                     type="submit"
                     name="action">Submit
-    <i className="material-icons right">send</i>
+                    <i className="material-icons right">send</i>
                 </button>
+                <ToastContainer
+                    position="top-right"
+                    autoClose={2000}
+                    hideProgressBar={true}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                />
+
             </div>
         </div>
         <div className="row">

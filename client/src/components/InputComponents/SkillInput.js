@@ -1,11 +1,24 @@
 import React, { useState } from 'react';
 import API from "../../utils/API";
 import Select from 'react-select';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SkillInput = (props) => {
     const [selectedValue, setSelectedValue] = useState("")
     const [skill, setSkill] = useState("")
+
+    const addSkillSuccess = () =>{
+        toast('Skill Added Successfully', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+    }
 
     const handleCatChange = selectedValue => {
         setSelectedValue(selectedValue)
@@ -19,18 +32,16 @@ const SkillInput = (props) => {
             catId: selectedValue.value
         })
             .then(res => {
-                console.log("Skill Saved");
+                addSkillSuccess();
                 setSkill("")
                 props.getSkills(true)
-            }
-            )
+            })
             .catch(
                 error => console.log(error)
-            )
-    }
+            )}
     return (
 
-        <div className="inputContainer">
+        <div style={{height:"200px"}} className="inputContainer">
 
             <div className="row">
                 <h5 className="col s4">Add a Skill</h5>
@@ -52,6 +63,17 @@ const SkillInput = (props) => {
                         Submit
                         <i className="material-icons right">send</i>
                     </button>
+                    <ToastContainer
+                        position="top-right"
+                        autoClose={2000}
+                        hideProgressBar={true}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                    />
                 </div>
             </div>
 
@@ -66,13 +88,13 @@ const SkillInput = (props) => {
                             className="validate" />
                         <label htmlFor="skill">Skill</label>
                     </div>
-                    <div className="input-field col s8">
+                    {/* <div className="input-field col s8">
                         <input
                             id="skill-description-input"
                             type="text"
                             className="validate" />
                         <label htmlFor="description">Description</label>
-                    </div>
+                    </div> */}
                 </form>
             </div>
         </div>
