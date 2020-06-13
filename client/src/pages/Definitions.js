@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from "../components/layout/Navbar";
 import SkillsTable from "../components/layout/SkillsTable";
 import CategoriesTable from "../components/layout/CategoriesTable";
-
 import DefCard from "../components/cards/DefCard";
-// import Main from "../components/Main";
 import API from "../utils/API"
 
 
