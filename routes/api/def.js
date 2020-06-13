@@ -61,4 +61,14 @@ const Def = require('../../models/Def');
                 .catch(err => res.send(err))
         });
 
+        //Get all user's definitions by category id
+        router.get('/alldefcat', passport.authenticate("jwt", {session:false}) ,(req, res)=>{
+            const User = req.user.id;
+            const Cat = req.user.catId;
+            Def.find({$and:[{User}, {Cat}]}, (err, data)=>{
+                if(err) return res.send(err);
+                res.send(data)
+            })        
+        });
+
 module.exports = router;

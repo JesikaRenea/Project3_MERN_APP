@@ -91,4 +91,15 @@ const Lib = require('../../models/Lib');
             });
         });
 
+        //Get all user's libraries by category id
+        router.get('/alllibcat', passport.authenticate("jwt", {session:false}) ,(req, res)=>{
+            const User = req.user.id;
+            const Cat = req.user.catId;
+            Lib.find({$and:[{User}, {Cat}]}, (err, data)=>{
+                if(err) return res.send(err);
+                res.send(data)
+            })        
+        });
+                
+
 module.exports = router;

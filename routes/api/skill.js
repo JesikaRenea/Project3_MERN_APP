@@ -27,15 +27,15 @@ const Skills = require('../../models/Skills');
         router.get('/skill', passport.authenticate("jwt", {session:false}), (req, res)=>{
             const User = req.user.id;
             Skills.find({User}).then(function(data) {res.send(data)})
-            .catch(err => res.send(err))
+            .catch(err => res.send(err));
         });
 
         //Delete a skill by id
         router.delete('/skill/:id', (req, res)=>{
             const _id = req.params.id;
             Skills.deleteOne({_id}, (err, result) =>{
-                if(err) return res.send(err)
-                res.send(result)
+                if(err) return res.send(err);
+                res.send(result);
             });
         });
 
@@ -63,7 +63,7 @@ const Skills = require('../../models/Skills');
             Skills.find({$and:[{User}, {Master:true}]}, (err, data)=>{
                 if(err) return res.send(err);
                 res.send(data)
-            })
+            });
         });
 
         //Get all unmastered skills
@@ -72,7 +72,18 @@ const Skills = require('../../models/Skills');
             Skills.find({$and:[{User}, {Master:false}]}, (err, data)=>{
                 if(err) return res.send(err);
                 res.send(data)
-            })
+            });
         });
+
+        //Get all user's skills by category id
+        router.get('/allskillcat', passport.authenticate("jwt", {session:false}) ,(req, res)=>{
+            const User = req.user.id;
+            const Cat = req.user.catId;
+            Skills.find({$and:[{User}, {Cat}]}, (err, data)=>{
+                if(err) return res.send(err);
+                res.send(data)
+            });        
+        });
+        
 
 module.exports = router;
