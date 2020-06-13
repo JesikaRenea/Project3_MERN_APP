@@ -21,12 +21,23 @@ function ResultsList(props) {
     });
 }
 
+const needCat = () =>{
+  toast('Must have a category!', {
+  position: "top-right",
+  autoClose: 2000,
+  hideProgressBar: true,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  });
+}
+
 useEffect(() => {
   if (getCategories)
 
       API.findAllCat()
           .then(res => {
-              console.log(res.data);
               setCategories(res.data.map(cat => ({
               value: cat._id,
               label: cat.catName
@@ -46,13 +57,10 @@ useEffect(() => {
 
 const handleCatChange = selectedValue => {
   setSelectedValue(selectedValue)
-  console.log(selectedValue)
 }
 
 const handleAdd = (text) =>{
   if(selectedValue){
-      console.log(text);
-      console.log(selectedValue);
       API.addLib({
           libName: text.title,
           libURL: text.link,
@@ -60,14 +68,13 @@ const handleAdd = (text) =>{
           catId: selectedValue.value
       })
       .then(res =>{
-          console.log(res);
           addSearchSuccess();
       })
       .catch(err =>{
           console.log(err);
       })
   } else {
-      console.log("Must have a Category")
+      needCat()
   }
 }
 

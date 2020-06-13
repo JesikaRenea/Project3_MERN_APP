@@ -33,7 +33,6 @@ const DefCard = props => {
     const deleteDef = id => {
         API.delDefById(id)
             .then(res => {
-                console.log(res)
                 deleteDefSuccess();
                 props.setGetDefs(true)
             })

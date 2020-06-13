@@ -20,13 +20,24 @@ function VideoSearchResults(props) {
         progress: undefined,
         });
     }
+
+    const needCat = () =>{
+        toast('Must have a category!', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+      }
     
     useEffect(() => {
         if (getCategories)
 
             API.findAllCat()
                 .then(res => {
-                    console.log(res.data);
                setCategories(res.data.map(cat => ({
                     value: cat._id,
                     label: cat.catName
@@ -46,13 +57,10 @@ function VideoSearchResults(props) {
 
     const handleCatChange = selectedValue => {
         setSelectedValue(selectedValue)
-        console.log(selectedValue)
     }
 
     const handleAdd = (video) =>{
         if(selectedValue){
-            console.log(video);
-            console.log(selectedValue);
             API.addLib({
                 libName: video.title,
                 libURL: video.url,
@@ -60,14 +68,13 @@ function VideoSearchResults(props) {
                 catId: selectedValue.value
             })
             .then(res =>{
-                console.log(res);
                 addVideoSuccess();
             })
             .catch(err =>{
                 console.log(err);
             })
         } else {
-            console.log("Must have a Category")
+            needCat();
         }
     }
 

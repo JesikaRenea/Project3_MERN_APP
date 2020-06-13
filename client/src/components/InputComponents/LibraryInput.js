@@ -27,7 +27,6 @@ const LibraryInput = (props) => {
 
     const handleCatChange = selectedValue => {
         setSelectedValue(selectedValue)
-        console.log(selectedValue)
     }
 
     const handleSubmit = e => {
@@ -41,12 +40,10 @@ const LibraryInput = (props) => {
 
         })
             .then(res => {
-                console.log("Library Item Saved");
                 addLibSuccess();
                 setLibName("");
                 setLibURL("");
                 setLibType("")
-                console.log(res)
             }
             )
             .catch(

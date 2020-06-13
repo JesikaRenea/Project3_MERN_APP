@@ -50,7 +50,6 @@ class Register extends Component {
     }
 
     onPhoneDropDwn = e => {
-        console.log(e);
         this.setState({phoneType: e.value});
     }
 
@@ -80,7 +79,6 @@ class Register extends Component {
             phoneType: this.state.phoneType,
         };
 
-        // console.log(newUser);
         this.props.registerUser(newUser, this.props.history);
     }
     

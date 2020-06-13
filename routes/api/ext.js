@@ -6,7 +6,7 @@ const axios = require('axios');
 require('dotenv').config(); // external key info
 
 router.post("/web", (req, res) => {
-    console.log("at external web route")
+
     let inText = req.body.query.trim().replace(/\s/g, "+");
     axios({
         "method": "GET",
@@ -30,11 +30,9 @@ router.post("/web", (req, res) => {
     })
         .then(result => {
             console.log("Success");
-            console.log(result.data.results);
             res.send(result.data.results);
         })
         .catch(err => {
-            console.log(err);
             res.send(err);
         });
 });
@@ -63,12 +61,9 @@ router.post("/news", (req, res) => {
         }
     })
         .then(result => {
-            console.log("Success");
-            console.log(result.data.results);
             res.send(result.data.results);
         })
         .catch(err => {
-            console.log(err);
             res.send(err);
         });
 });
@@ -88,11 +83,9 @@ router.post("/video", (req, res) => {
         }
     })
         .then((result) => {
-            console.log(result)
             res.send(result.data.items)
         })
         .catch((error) => {
-            console.log(error)
             res.send(error)
 
         })
