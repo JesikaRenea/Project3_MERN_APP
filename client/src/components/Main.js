@@ -39,7 +39,8 @@ const Main = props => {
           console.log(res.data);
           setSkills(res.data.map(skill => ({
             id: skill._id,
-            name: skill.skillsName
+            name: skill.skillsName,
+            master: skill.Master
           })
           ))
         })
