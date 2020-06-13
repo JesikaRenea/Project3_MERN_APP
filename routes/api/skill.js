@@ -40,8 +40,8 @@ const Skills = require('../../models/Skills');
         });
 
         //Master a skill by id
-        router.put('/skill', (req, res)=>{
-            const _id = req.body.skillId;
+        router.put('/skill/:id', (req, res)=>{
+            const _id = req.params.id;
             Skills.updateOne({_id}, {$set:{Master:true}}, (err, result)=>{
                 if(err) return res.send(err);
                 res.send(result);
@@ -49,8 +49,8 @@ const Skills = require('../../models/Skills');
         });
 
         //Unmaster a skill
-        router.put('/unskill', (req, res)=>{
-            const _id = req.body.skillId;
+        router.put('/unskill/:id', (req, res)=>{
+            const _id = req.params.id;
             Skills.updateOne({_id}, {$set:{Master:false}}, (err, result)=>{
                 if(err) return res.send(err);
                 res.send(result);

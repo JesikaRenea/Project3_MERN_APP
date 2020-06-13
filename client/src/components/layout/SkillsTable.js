@@ -5,9 +5,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const SkillsTable = props => {
 
-  const [getMaster, setMaster] = useState([]);
-  const [getCheck, setCheck] = useState([])
-
+  const [getMaster, setMaster] = useState([props.skills.master]);
+  
   const deleteSkillSuccess = () =>{
     toast('Skill Deleted Successfully', {
     position: "top-right",
@@ -28,23 +27,21 @@ const SkillsTable = props => {
       .catch(err => console.log(err));
   }
 
-  const handleCheck = (id, master) =>{
-    console.log("At Handle Check")
-    console.log(master)
-    if(master === true){
+  const handleCheck = (id) =>{
+    if(getMaster.master){
       API.unmasterSkill(id)
-    .then(res => {
-      console.log(res)
-      setMaster({master:false})
-      setCheck({checked:false})
+      .then(res => {
+        console.log("Unmastered")
+        setMaster({master:false})
+        console.log(res)
     })
     .catch(err => console.log(err))
     } else {
       API.masterSkill(id)
       .then(res =>{
-        console.log(res)
+        console.log("Mastered")
         setMaster({master:true})
-        setCheck({checked:true})
+        console.log(res)
       })
     }
   }
@@ -77,12 +74,12 @@ const SkillsTable = props => {
                       Mastered
                     </p>
                   <input
-                    //defaultChecked = {skill.master}                   
+                    //defaultChecked = {skill.master ? 'checked' : 'unchecked'}
                     id = {i}
                     type="checkbox"
-                    value= {skill.master ? 'checked' : 'unchecked'}
+                    value= {getMaster.master ? 'checked' : 'unchecked'}
                     style = {{align:"right", opacity:1}}
-                    onClick = {() => handleCheck(skill.id, skill.master)}
+                    onChange = {() => handleCheck(skill.id)}
                   />
                   </label>
                 </form>

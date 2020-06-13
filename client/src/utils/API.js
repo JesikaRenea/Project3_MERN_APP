@@ -39,11 +39,11 @@ export default {
     delSkillById: function(skillId){
         return axios.delete("/api/skill/skill/" + skillId)
     },
-    masterSkill: function(data){
-        return axios.put("/api/skill/skill", data)
+    masterSkill: function(skillId){
+        return axios.put("/api/skill/skill/" + skillId)
     },
-    unmasterSkill: function(data){
-        return axios.put("/api/skill/unskill", data)
+    unmasterSkill: function(skillId){
+        return axios.put("/api/skill/unskill/" + skillId)
     },
     getAllMasteredSkills: function(data){
         return axios.get("/api/skill/allmasteredskill", data)
