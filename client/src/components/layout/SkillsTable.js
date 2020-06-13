@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import API from "../../utils/API";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const SkillsTable = props => {
 
-  const [getMaster, setMaster] = useState([props.skills.master]);
-  
+
   const deleteSkillSuccess = () =>{
     toast('Skill Deleted Successfully', {
     position: "top-right",
@@ -27,28 +26,24 @@ const SkillsTable = props => {
       .catch(err => console.log(err));
   }
 
-  const handleCheck = (id) =>{
-    if(getMaster.master){
-      API.unmasterSkill(id)
+  const handleCheck = (id,newMaster) =>{
+    if(newMaster){
+      API.masterSkill(id)
       .then(res => {
-        console.log("Unmastered")
-        setMaster({master:false})
-        console.log(res)
+        props.setGetSkills(true)
     })
     .catch(err => console.log(err))
     } else {
-      API.masterSkill(id)
+      API.unmasterSkill(id)
       .then(res =>{
-        console.log("Mastered")
-        setMaster({master:true})
-        console.log(res)
+        props.setGetSkills(true)
       })
     }
   }
 
 
   return (
-  
+    
     <table>
       <thead>
         <tr>
@@ -71,16 +66,16 @@ const SkillsTable = props => {
                 <form>
                   <label>
                     <p>
-                      Mastered
-                    </p>
-                  <input
-                    //defaultChecked = {skill.master ? 'checked' : 'unchecked'}
+                      Mastered&nbsp;  <input
+                    checked = {skill.master}
                     id = {i}
                     type="checkbox"
-                    value= {getMaster.master ? 'checked' : 'unchecked'}
+                    value= {skill.master ? 'checked' : 'unchecked'}
                     style = {{align:"right", opacity:1}}
-                    onChange = {() => handleCheck(skill.id)}
+                    onChange = {() => handleCheck(skill.id, !skill.master)}
                   />
+
+                    </p>
                   </label>
                 </form>
                 </div> {/* Row Div */}
