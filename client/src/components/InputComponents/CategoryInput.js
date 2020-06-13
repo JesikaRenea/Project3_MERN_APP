@@ -1,8 +1,22 @@
 import React, { useState } from 'react';
 import API from "../../utils/API";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CategoryInput = (props) => {
     const [category, setCategory] = useState("")
+
+    const addCatSuccess = () =>{
+        toast('Category Added Successfully', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+    }
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -10,7 +24,7 @@ const CategoryInput = (props) => {
             catName: category
         })
             .then(res => {
-                console.log("Category Saved");
+                addCatSuccess();
                 setCategory("");
                 props.getCats(true)
             }
@@ -43,6 +57,17 @@ const CategoryInput = (props) => {
                         name="action">Submit
     <i className="material-icons right">send</i>
                     </button>
+                    <ToastContainer
+                        position="top-right"
+                        autoClose={2000}
+                        hideProgressBar={true}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        />
                 </div>
             </div>
         </div>

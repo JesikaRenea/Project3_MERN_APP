@@ -116,17 +116,17 @@ const handleAdd = (text) =>{
                   <i className="material-icons right">send</i>
                 </button>
                 <ToastContainer
-                                    position="top-right"
-                                    autoClose={2000}
-                                    hideProgressBar={true}
-                                    newestOnTop={false}
-                                    closeOnClick
-                                    rtl={false}
-                                    pauseOnFocusLoss
-                                    draggable
-                                    pauseOnHover
-                                    />
-                                </div>
+                  position="top-right"
+                  autoClose={2000}
+                  hideProgressBar={true}
+                  newestOnTop={false}
+                  closeOnClick
+                  rtl={false}
+                  pauseOnFocusLoss
+                  draggable
+                  pauseOnHover
+                />
+                </div>
               </div>
             </div>
           </div>
