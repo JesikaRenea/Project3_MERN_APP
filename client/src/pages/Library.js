@@ -49,7 +49,8 @@ const Library = props => {
                     console.log(res.data);
                     setSkills(res.data.map(skill => ({
                         id: skill._id,
-                        name: skill.skillsName
+                        name: skill.skillsName,
+                        master:skill.Master
                     })
                     ))
                 }
@@ -99,7 +100,8 @@ const Library = props => {
                 <div className="col s2">
                     <CategoriesTable categories={categories} />
                     <br />
-                    <SkillsTable skills={skills} />
+                    <SkillsTable skills={skills}
+                    setGetSkills={setGetSkills} />
                 </div>
                 <div className="col s10">
                     <h4 className="page-title">My Library</h4>
