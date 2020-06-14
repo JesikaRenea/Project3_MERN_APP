@@ -78,7 +78,7 @@ const Skills = require('../../models/Skills');
         //Get all user's skills by category id
         router.get('/allskillcat', passport.authenticate("jwt", {session:false}) ,(req, res)=>{
             const User = req.user.id;
-            const Cat = req.user.catId;
+            const Cat = req.body.catId;
             Skills.find({$and:[{User}, {Cat}]}, (err, data)=>{
                 if(err) return res.send(err);
                 res.send(data)
