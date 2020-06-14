@@ -21,7 +21,9 @@ const Cat = require('../../models/Cat');
 
         // Find All Categories
         router.get('/allcat', (req, res) => {
-            Cat.find({}).then(function(data) {res.send(data)})
+            catName = req.body.catName;
+            Cat.find({}, null, {sort:{catName}})
+            .then(function(data) {res.send(data)})
             .catch(err => console.log(err))
         });
 

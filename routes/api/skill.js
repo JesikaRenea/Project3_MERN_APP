@@ -26,7 +26,9 @@ const Skills = require('../../models/Skills');
         //Get all skills by user
         router.get('/skill', passport.authenticate("jwt", {session:false}), (req, res)=>{
             const User = req.user.id;
-            Skills.find({User}).then(function(data) {res.send(data)})
+            Skills.find({User})
+            .sort("skillsName")
+            .then(function(data) {res.send(data)})
             .catch(err => res.send(err));
         });
 
@@ -60,7 +62,7 @@ const Skills = require('../../models/Skills');
         //Get all mastered skills
         router.get('/allmasteredskill', passport.authenticate("jwt", {session:false}),  (req, res)=>{
             const User = req.user.id;
-            Skills.find({$and:[{User}, {Master:true}]}, (err, data)=>{
+            Skills.find({$and:[{User}, {Master:true}]}, null, {sort:"skillsName"}, (err, data)=>{
                 if(err) return res.send(err);
                 res.send(data)
             });
@@ -69,7 +71,7 @@ const Skills = require('../../models/Skills');
         //Get all unmastered skills
         router.get('/allunmasteredskill', passport.authenticate("jwt", {session:false}) ,(req, res)=>{
             const User = req.user.id;
-            Skills.find({$and:[{User}, {Master:false}]}, (err, data)=>{
+            Skills.find({$and:[{User}, {Master:false}]}, null, {sort:"skillsName"}, (err, data)=>{
                 if(err) return res.send(err);
                 res.send(data)
             });
@@ -79,7 +81,7 @@ const Skills = require('../../models/Skills');
         router.get('/allskillcat', passport.authenticate("jwt", {session:false}) ,(req, res)=>{
             const User = req.user.id;
             const Cat = req.body.catId;
-            Skills.find({$and:[{User}, {Cat}]}, (err, data)=>{
+            Skills.find({$and:[{User}, {Cat}]}, null, {sort:"skillsName"}, (err, data)=>{
                 if(err) return res.send(err);
                 res.send(data)
             });        

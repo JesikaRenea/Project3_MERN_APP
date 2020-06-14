@@ -51,6 +51,7 @@ const Lib = require('../../models/Lib');
             const User = req.user.id;
             Lib.find({User})
                 .populate("Cat")
+                .sort("libName")
                 .then(result=>res.send(result))
                 .catch(err => res.send(err))
                 
@@ -69,6 +70,7 @@ const Lib = require('../../models/Lib');
         router.get('/allvidlib', passport.authenticate("jwt", {session:false}), (req, res)=>{
             Lib.find({$and:[{User:req.user.id}, {libType:'VIDEO'}]})
             .populate("Cat")
+            .sort("libName")
             .then(result =>res.send(result))
             .catch(err => res.send(err))
         });
@@ -77,6 +79,7 @@ const Lib = require('../../models/Lib');
         router.get('/alltextlib', passport.authenticate("jwt", {session:false}), (req, res)=>{
             Lib.find({$and:[{User:req.user.id}, {libType:'TEXT'}]})
                 .populate("Cat")
+                .sort("libName")
                 .then(result => res.send(result))
                 .catch(err => res.send(err))
         });
@@ -95,7 +98,7 @@ const Lib = require('../../models/Lib');
         router.get('/alllibcat', passport.authenticate("jwt", {session:false}) ,(req, res)=>{
             const User = req.user.id;
             const Cat = req.body.catId;
-            Lib.find({$and:[{User}, {Cat}]}, (err, data)=>{
+            Lib.find({$and:[{User}, {Cat}]}, null, {sort:"libName"}, (err, data)=>{
                 if(err) return res.send(err);
                 res.send(data)
             })        
