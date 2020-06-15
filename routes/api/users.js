@@ -8,10 +8,6 @@ const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
 const User = require('../../models/User');
-// const Def = require('../../models/Def');
-// const Skills = require('../../models/Skills');
-// const Lib = require('../../models/Lib');
-// const Cat = require('../../models/Cat');
 
 router.post('/register', (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
@@ -88,9 +84,6 @@ router.post('/login', (req, res) => {
                 });
             });
         });
-
-        console.log("new user payload")
-        console.log(user)
 
 
     }); // end post scope for login

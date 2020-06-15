@@ -25,7 +25,6 @@ const DefinitionInput = (props) => {
 
     const handleCatChange = selectedValue => {
         setSelectedValue(selectedValue)
-        console.log(selectedValue)
     }
 
     const handleSubmit = e => {

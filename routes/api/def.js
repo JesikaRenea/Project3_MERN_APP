@@ -45,7 +45,6 @@ const Def = require('../../models/Def');
         // Delete one definition
         router.delete('/def/:id', (req, res)=>{
             const _id = req.params.id;
-            console.log(_id)
             Def.deleteOne({_id}, (err,result)=>{
                 if(err) return res.send(err);
                 res.send(result);

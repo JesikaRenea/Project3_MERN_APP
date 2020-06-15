@@ -10,8 +10,6 @@ const Skills = require('../../models/Skills');
             const User = req.user.id;
             const Cat = req.body.catId;
 
-            console.log(User, skillsName, Cat);
-
             const newSkill = new Skills({
                 skillsName,
                 Cat,

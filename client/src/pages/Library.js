@@ -23,7 +23,6 @@ const Library = props => {
         if (getCategories)
             API.findAllCat()
                 .then(res => {
-                    console.log(res.data);
                     setCategories(res.data.map(category => ({
                         id: category._id,
                         catName: category.catName
@@ -46,7 +45,6 @@ const Library = props => {
         if (getSkills)
             API.getAllSkillsByUser()
                 .then(res => {
-                    console.log(res.data);
                     setSkills(res.data.map(skill => ({
                         id: skill._id,
                         name: skill.skillsName,

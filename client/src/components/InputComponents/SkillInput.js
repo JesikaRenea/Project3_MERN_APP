@@ -22,7 +22,6 @@ const SkillInput = (props) => {
 
     const handleCatChange = selectedValue => {
         setSelectedValue(selectedValue)
-        console.log(selectedValue)
     }
 
     const handleSubmit = e => {
