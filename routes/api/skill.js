@@ -24,16 +24,18 @@ const Skills = require('../../models/Skills');
         //Get all skills by user
         router.get('/skill', passport.authenticate("jwt", {session:false}), (req, res)=>{
             const User = req.user.id;
-            Skills.find({User}).then(function(data) {res.send(data)})
-            .catch(err => res.send(err))
+            Skills.find({User})
+            .sort("skillsName")
+            .then(function(data) {res.send(data)})
+            .catch(err => res.send(err));
         });
 
         //Delete a skill by id
         router.delete('/skill/:id', (req, res)=>{
             const _id = req.params.id;
             Skills.deleteOne({_id}, (err, result) =>{
-                if(err) return res.send(err)
-                res.send(result)
+                if(err) return res.send(err);
+                res.send(result);
             });
         });
 
@@ -58,19 +60,30 @@ const Skills = require('../../models/Skills');
         //Get all mastered skills
         router.get('/allmasteredskill', passport.authenticate("jwt", {session:false}),  (req, res)=>{
             const User = req.user.id;
-            Skills.find({$and:[{User}, {Master:true}]}, (err, data)=>{
+            Skills.find({$and:[{User}, {Master:true}]}, null, {sort:"skillsName"}, (err, data)=>{
                 if(err) return res.send(err);
                 res.send(data)
-            })
+            });
         });
 
         //Get all unmastered skills
         router.get('/allunmasteredskill', passport.authenticate("jwt", {session:false}) ,(req, res)=>{
             const User = req.user.id;
-            Skills.find({$and:[{User}, {Master:false}]}, (err, data)=>{
+            Skills.find({$and:[{User}, {Master:false}]}, null, {sort:"skillsName"}, (err, data)=>{
                 if(err) return res.send(err);
                 res.send(data)
-            })
+            });
         });
+
+        //Get all user's skills by category id
+        router.get('/allskillcat', passport.authenticate("jwt", {session:false}) ,(req, res)=>{
+            const User = req.user.id;
+            const Cat = req.body.catId;
+            Skills.find({$and:[{User}, {Cat}]}, null, {sort:"skillsName"}, (err, data)=>{
+                if(err) return res.send(err);
+                res.send(data)
+            });        
+        });
+        
 
 module.exports = router;

@@ -22,7 +22,6 @@ export default {
         return axios.delete("/api/cat/delcatname", data);
     },
 
-    //Returning undefined
     delCatByID: function(id){
         return axios.delete("/api/cat/cat/" + id);
     },
@@ -35,7 +34,6 @@ export default {
         return axios.get("/api/skill/skill", data)
     },
 
-    //Returning undefined
     delSkillById: function(skillId){
         return axios.delete("/api/skill/skill/" + skillId)
     },
@@ -51,6 +49,10 @@ export default {
 
     getAllUnmasteredSkills: function(data){
         return axios.get("/api/skill/allunmasteredskill", data)
+    },
+
+    getAllSkillsByCat: function(data){
+        return axios.get("/api/skill/allskillcat",data)
     },
 
     addDef: function(data){
@@ -71,6 +73,10 @@ export default {
 
      getAllDefByUser: function(data){
         return axios.get("/api/def/alldef", data)
+    },
+
+    getAllDefByCat: function(data){
+        return axios.get("/api/def/alldefcat",data)
     },
 
     addLib: function(data){
@@ -99,6 +105,10 @@ export default {
 
     getAllTextLib: function(data){
         return axios.get("/api/lib/alltextlib", data)
+    },
+
+    getAllLibByCat: function(data){
+        return axios.get("/api/lib/alllibcat",data)
     },
 
     delLibById: function(libId){
