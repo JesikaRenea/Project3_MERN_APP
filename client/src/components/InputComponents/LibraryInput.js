@@ -8,20 +8,20 @@ import 'react-toastify/dist/ReactToastify.css';
 const LibraryInput = (props) => {
     const [selectedValue, setSelectedValue] = useState("")
 
-    
+
     const [libName, setLibName] = useState("");
     const [libURL, setLibURL] = useState("");
     const [libType, setLibType] = useState("TEXT")
 
-    const addLibSuccess = () =>{
+    const addLibSuccess = () => {
         toast('Library Item Added Successfully', {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
         });
     }
 
@@ -32,7 +32,7 @@ const LibraryInput = (props) => {
     const handleSubmit = e => {
         e.preventDefault();
         API.addLib({
-    
+
             libName: libName,
             libURL: libURL,
             libType: libType,
@@ -112,6 +112,7 @@ const LibraryInput = (props) => {
 
                     <div className="input-field col s2">
                         <Toggle
+                            id="toggle"
                             items={["TEXT", "VIDEO"]}
                             checked="TEXT"
                             name="toggleType"

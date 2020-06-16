@@ -84,8 +84,8 @@ function VideoSearchResults(props) {
 
                 <div className="row" key={result.id.videoId}>
                     <div className="col s12">
-                        <div className="card blue-grey">
-                            <div className="card-content white-text">
+                        <div className="card">
+                            <div className="card-content">
 
                                 <div className="card-title" id={"video-title" + i} >
 
@@ -118,7 +118,7 @@ function VideoSearchResults(props) {
                                 <button
                                     onClick={()=>handleAdd(result)}
                                     className="btn waves-effect waves-light"
-                                    id="card-btn"
+                                    id="result-btn"
                                     type="submit" name="action">
                                     Add To Library
                                     <i className="material-icons right">send</i>
