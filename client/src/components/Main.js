@@ -66,6 +66,7 @@ const Main = props => {
       <div className="col s10">
         {/* <Navtabs /> */}
         <UserInputs
+          categories={categories}
           setGetCategories={setGetCategories}
           setGetSkills={setGetSkills} />
       </div>

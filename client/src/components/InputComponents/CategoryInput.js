@@ -26,7 +26,7 @@ const CategoryInput = (props) => {
             .then(res => {
                 addCatSuccess();
                 setCategory("");
-                props.getCats(true)
+                props.getCats(true);
             }
             )
             .catch(
