@@ -54,7 +54,7 @@ const Library = props => {
                 }
                 )
                 .catch(
-                    error => console.log(error.response.data)
+                    error => console.log(error)
                 )
 
         setGetSkills(false)
@@ -80,7 +80,7 @@ const Library = props => {
                 }
                 )
                 .catch(
-                    error => console.log(error.response.data)
+                    error => console.log(error)
                 )
 
         setGetLib(false)

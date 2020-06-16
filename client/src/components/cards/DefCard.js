@@ -56,18 +56,19 @@ const DefCard = props => {
 
         <div className="row" key={props.id}>
             <div className="col s12">
-                <div className="card blue-grey">
-                    <div className="card-content white-text">
-                        <span className="card-title" id="term-title"><strong>Term: {props.defName}</strong></span>
+                <div className="card">
+                    <div className="card-content">
+                        <span className="card-title" id="term-title">Term: {props.defName}</span>
                         <form >
-                        Definition:
+                        Definition: 
+                        <br />
                         <textarea id="term-def" value= { defText } onChange = {handleDefChange}/>
                         </form>
                         <span id="category-id">Category: {props.defCat}</span>
                         <button
                             onClick={() => deleteDef(props.id)}
                             className="btn waves-effect waves-light"
-                            id="lib-btn"
+                            id="def-btn"
                             type="delete" name="action">
                                 Delete
                             <i className="material-icons right">delete</i>
@@ -76,7 +77,7 @@ const DefCard = props => {
                         <button
                             onClick = { ()=>handleUpdate(props.id, defText)}
                             className="btn waves-effect waves-light"
-                            id="lib-btn"
+                            id="def-btn"
                             type="update" name="action">
                                 Update
                             <i className="material-icons right">edit</i>

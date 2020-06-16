@@ -84,8 +84,8 @@ const handleAdd = (text) =>{
 
         <div className="row" key={i}>
           <div className="col s12">
-            <div className="card blue-grey">
-              <div className="card-content white-text">
+            <div className="card">
+              <div className="card-content">
 
                 <div className="card-title" id="web-title" key={i}>
 
@@ -117,7 +117,7 @@ const handleAdd = (text) =>{
                 <button
                   onClick={()=>handleAdd(result)}
                   className="btn waves-effect waves-light"
-                  id="card-btn"
+                  id="result-btn"
                   type="submit" name="action">
                   Add to Library
                   <i className="material-icons right">send</i>

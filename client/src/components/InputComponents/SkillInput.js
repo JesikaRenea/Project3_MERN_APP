@@ -78,7 +78,7 @@ const SkillInput = (props) => {
 
             <div className="row">
                 <form className="col s12">
-                    <div className="input-field col s4">
+                    <div className="input-field col s12">
                         <input
                             value={skill}
                             onChange={(e) => setSkill(e.target.value)}
