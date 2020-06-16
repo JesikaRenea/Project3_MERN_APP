@@ -12,6 +12,7 @@ const Main = props => {
 
   const [getCategories, setGetCategories] = useState(true)
   const [categories, setCategories] = useState([])
+  const [categoryOptions, setCategoryOptions] = useState([])
 
   useEffect(() => {
     if (getCategories)
@@ -22,6 +23,12 @@ const Main = props => {
             catName: category.catName
           })
           ))
+          setCategoryOptions(res.data.map(cat => ({
+            value: cat._id,
+            label: cat.catName
+          })
+          ))
+
         })
         .catch(
           error => console.log(error.response.data)
@@ -66,6 +73,7 @@ const Main = props => {
       <div className="col s10">
         {/* <Navtabs /> */}
         <UserInputs
+          categories={categoryOptions}
           setGetCategories={setGetCategories}
           setGetSkills={setGetSkills} />
       </div>
