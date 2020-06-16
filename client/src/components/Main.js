@@ -71,7 +71,6 @@ const Main = props => {
 
       </div>
       <div className="col s10">
-        {/* <Navtabs /> */}
         <UserInputs
           categories={categoryOptions}
           setGetCategories={setGetCategories}
