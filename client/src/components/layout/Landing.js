@@ -17,7 +17,6 @@ class Landing extends Component {
                             }}>
                                 Register
                             </Link>
-                            {/* <Register /> */}
                         </div>
                         <div className="col s6">
                             <Link to="/login" className="btn btn-large btn-flat waves-effect white black-text" style={{
@@ -27,7 +26,6 @@ class Landing extends Component {
                             }}>
                                 Login
                             </Link>
-                            {/* <Login /> */}
                         </div>
                     </div>
                 </div>

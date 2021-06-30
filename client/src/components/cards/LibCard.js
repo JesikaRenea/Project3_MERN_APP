@@ -31,8 +31,6 @@ const LibCard = props => {
                 <div className="card">
                     <div className="card-content">
                         <div className="card-title" id="lib-title">
-                            {/* <i className="fa fa-book" aria-hidden="true"></i>
-                            <i className="fa fa-video-camera " aria-hidden="true"></i> */}
                             Title: {props.libName}
                         </div>
                         <p id="lib-des">
@@ -65,16 +63,6 @@ const LibCard = props => {
                             draggable
                             pauseOnHover
                         />
-
-                        {/* <button
-                            // onClick={handleUpdate}
-                            className="btn waves-effect waves-light"
-                            id="card-btn"
-                            type="update" name="action">
-                            Update
-                        <i className="material-icons right">edit</i>
-                        </button> */}
-
                     </div>
                 </div>
             </div>

@@ -87,13 +87,6 @@ const SkillInput = (props) => {
                             className="validate" />
                         <label htmlFor="skill">Skill</label>
                     </div>
-                    {/* <div className="input-field col s8">
-                        <input
-                            id="skill-description-input"
-                            type="text"
-                            className="validate" />
-                        <label htmlFor="description">Description</label>
-                    </div> */}
                 </form>
             </div>
         </div>
