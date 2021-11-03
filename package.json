@@ -32,7 +32,7 @@
     "react-toastify": "^6.0.5",
     "react-toggle": "^4.1.1",
     "react-under-construction": "^0.3.0",
-    "validator": "^11.1.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
